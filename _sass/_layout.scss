@@ -221,7 +221,7 @@ body, html {
         @include media-query($research-break) {
             float: left;
             clear: both;
-            max-width: 100%;
+            max-width: 300px;
             clear: both;
             padding-left: 0px;
 
@@ -235,6 +235,12 @@ body, html {
 .panel-group{
     float: left;
     max-width: 55%;
+    @include media-query($research-break) {
+        max-width: 100%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
     .panel-title{
         color: $grey-text;
         font-weight:bold;
@@ -318,13 +324,21 @@ body, html {
 
 .contact-footer-left {
     float: left;
-    width: 40%
+    width: 50%;
+    @include media-query($footer-break) {
+        width:100%;
+    }
 }
 
 .contact-footer-right{
-    float:right;
+    float: right;
     width: 40%
     margin-left 20px;
+    @include media-query($footer-break) {
+        width:100%;
+        float: left;
+    }
+
 }
 
 

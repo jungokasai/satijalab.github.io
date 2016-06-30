@@ -54,7 +54,11 @@
 
     &:hover {
         outline: 1px solid black;
+    }
 
+    @include media-query($software-break) {
+        width: 100%;
+        margin-bottom: 10px;
     }
 }
 
