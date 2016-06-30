@@ -1,0 +1,64 @@
+---
+layout: default
+title: Software
+permalink: /software/
+---
+
+{% include seurat_banner.html %}
+
+<div class = "wrapper">
+    <div class = "software-about">
+        <p>
+            Seurat is an R package designed for the analysis and visualization of single cell RNA-seq data. It contains easy-to-use implementations of commonly used analytical techniques, including the identification of highly variable genes, dimensionality reduction (PCA, ICA, t-SNE), standard unsupervised clustering algorithms (density clustering, hierarchical clustering, k-means), and the discovery of differentially expressed genes and markers.
+            <br><br>
+
+            Seurat also features two recently developed computational methods for single cell analysis:
+            <br><br>
+        </p>
+        <ol>
+            <li>  Spatial reconstruction of single cell data (
+                <a href = "http://www.nature.com/nbt/journal/vaop/ncurrent/full/nbt.3192.html"> Satija*, Farrell* et al., Nature Biotechnology, 2015</a>)
+                    <ul>
+                        <li>Infers the original location of a single cell based on its gene expression, and a spatial reference map </li>
+                        <li><a href ={{ "get_started.html#clustering" | prepend: site.software_nav }}>Tutorial: Inferring spatial localization of single cells during Zebrafish embryogenesis </a></li>
+                    </ul>
+            </li>
+            <li>  Unsupervised clustering and discovery of cell types and states (
+                <a href = "http://www.cell.com/cell/abstract/S0092-8674(15)00549-8"> Macosko, Basu, Satija et al., Cell, 2015</a>)
+                    <ul>
+                    <li>Clustering algorithm combining linear and non-linear dimensional reduction techniques (i.e. 'spectral' t-SNE) </li>
+                    <li><a href ={{ "get_started.html#spatial" | prepend: site.software_nav }}> Tutorial: Unsupervised identification of cell types and biomarkers from single cell RNA-seq data</a></li>
+                    </ul>
+            </li>
+        </ol>
+        <br>
+        <p>
+            All methods emphasize clear, attractive, and interpretable visualizations, and were designed to be <a href ={{ "get_started.html" | prepend: site.software_nav }}>easily used</a> by both dry-lab and wet-lab researchers.
+            <br><br>
+            Seurat was written by Rahul Satija, with input from<a href="mailto:jfarrell@g.harvard.edu"> Jeff Farrell</a>,<a href="mailto:karthik@broadinstitute.org"> Karthik Shekhar</a>, and <a href ={{ "contact.html" | prepend: site.software_nav }}>generous contributors</a>, and is released under the GNU Public License (GPL 3.0).
+        </p>
+        <br>
+        <div class="div-bar"></div>
+        <br>
+        <h2>News</h2>
+
+            <b>May 21, 2015:</b><br>
+            <p><a href ="http://www.cell.com/cell/abstract/S0092-8674(15)00549-8">Drop-Seq manuscript </a> published. Version 1.2 released
+            </p>
+
+            <div class= "ident1">
+                <ul>
+                    <li>Added support for spectral t-SNE (non-linear dimensional reduction), and density clustering</li>
+                    <li>New visualizations - including pcHeatmap, dot.plot, and feature.plot</li>
+                    <li>Expanded package documentation, reduced import package burden</li>
+                    <li>Seurat code is now hosted on <a href="https://github.com/{{ site.github_username }}">GitHub</a>, enables easy install through devtools package</li>
+                    <li>Small bug fixes</li>
+                </ul>
+            </div>
+
+            <b>April 13, 2015:</b><br>
+            <p><a href ="http://www.nature.com/nbt/journal/vaop/ncurrent/full/nbt.3192.html"> Spatial mapping manuscript</a> published. Version 1.1 released
+            </p>
+
+    </div>
+</div>

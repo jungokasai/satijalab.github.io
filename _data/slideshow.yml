@@ -1,0 +1,32 @@
+- figure: spatial_localization.jpg
+  caption: Spatial localization of embryonic cells in Zebrafish
+
+- figure: bimodal_expression.png
+  caption: Bimodal gene expression in stimulated immune cells
+
+- figure: cell_variation.png
+  caption: Cellular variation uncovers circuits and cell states
+
+- figure: spatial_prediction.jpg
+  caption: Predicting novel spatial patterns in the Zebrafish embryo
+
+- figure: high_throughput.png
+  caption: High-throughput single cell profiling
+
+- figure: pop_markers.png
+  caption: Identifying novel and known subpopulation markers
+
+- figure: PC_plots.png
+  caption: Stimulated single cells lie on a multidimensional continuum
+
+- figure: imputation.jpg
+  caption: Using data imputation to alleviate technical noise
+
+- figure: gene_variability.png
+  caption: Variability in gene expression changes across conditions
+
+- figure: rare_subpop.png
+  caption: Single cell genomics can uncover rare subpopulations
+
+
+

@@ -1,0 +1,33 @@
+# Site settings
+name: Satija Lab
+title: Satija Lab
+email: rsatija@nygenome.org
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://yourdomain.com" # the base hostname & protocol for your site
+twitter_username: satijalab
+github_username:  satijalab
+
+# URL locations
+member_photos: /img/member_photos/
+slideshow_photos: /img/slideshow_photos/
+publication_photos: /img/publication_photos/
+
+navpages:
+  - name: Home
+    link: /
+  - name: People
+    link: /people/
+  - name: Research
+    link: /research/
+  - name: Publications
+    link: /publications/
+  - name: Software
+    link: /software/
+  - name: Join/Contact
+    link: /join_contact/
+
+software_nav: /software/
+
+# Build settings
+markdown: kramdown
+

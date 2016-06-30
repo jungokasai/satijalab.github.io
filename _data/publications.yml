@@ -1,0 +1,170 @@
+- title: Root Regeneration Triggers an Embryo-like Sequence Guided by Hormonal Interactions.
+  link: "http://www.cell.com/cell/abstract/S0092-8674%2816%2930491-3?_returnURL=http%3A%2F%2Flinkinghub.elsevier.com%2Fretrieve%2Fpii%2FS0092867416304913%3Fshowall%3Dtrue#"
+  author: "Efroni I, Mello A, Nawy T, Ip PL, Rahni R, DelRose N, Powers A, Satija R, Birnbaum KD."
+  journal: Cell
+  year: 2016
+  figure: efroni_root_regen.png
+
+- title: A Generic and Cell-Type-Specific Wound Response Precedes Regeneration.
+  link: http://www.cell.com/developmental-cell/abstract/S1534-5807%2815%2900718-2
+  author: "Wurtzel O, Cote LE, Poirier A, Satija R, Regev A, Reddien PW."
+  journal: Developmental Cell
+  year: 2015
+  figure: wurtzel_wound_response.png
+
+- title: Single-Cell Genomics Unveils Critical Regulators of Th17 Cell Pathogenicity.
+  link: http://www.cell.com/abstract/S0092-8674%2815%2901489-0
+  author: "Gaublomme JT, Yosef N, Lee Y, Gertner RS, Yang LV, Wu C, Pandolfi PP, Mak T, Satija R, Shalek AK, Kuchroo VK. "
+  journal: Cell
+  year: 2015
+  figure: gaublomme_th17_regulators.png
+
+- title: Pathogen Cell-to-Cell Variability Drives Heterogeneity in Host Immune Responses
+  link: http://www.cell.com/cell/abstract/S0092-8674%2815%2901041-7
+  author: "Avraham R, Haseley N, Brown D, Penaranda C, Jijon HB, Trombetta JJ, Satija R, Shalek AK, Xavier RJ, Regev A, Hung DT.  "
+  journal: Cell
+  year: 2015
+  figure: avraham_immune_response.png
+
+- title: MERFISHing for spatial context.
+  link: http://www.cell.com/trends/immunology/abstract/S1471-4906%2815%2900111-8
+  author: "Satija R, Shalek AK."
+  journal: Trends in Immunology
+  year: 2015
+  figure: satija_merfishing.png
+
+- title: A Genome-wide CRISPR Screen in Primary Immune Cells to Dissect Regulatory Networks.
+  link: http://www.cell.com/abstract/S0092-8674%2815%2900829-6
+  author: "Parnas O, Jovanovic M, Eisenhaure TM, Herbst RH, Dixit A, Ye CJ, Przybylski D, Platt RJ, Tirosh I, Sanjana NE, Shalem O, Satija R, Raychowdhury R, Mertins P, Carr SA, Zhang F, Hacohen N, Regev A."
+  journal: Cell
+  year: 2015
+  figure: parnas_crispr_network.png
+
+- title: The Regulatory Factor ZFHX3 Modifies Circadian Function in SCN via an AT Motif-Driven Axis.
+  link: http://www.cell.com/cell/abstract/S0092-8674%2815%2900830-2
+  author: "Parnas O, Jovanovic M, Eisenhaure TM, Herbst RH, Dixit A, Ye CJ, Przybylski D, Platt RJ, Tirosh I, Sanjana NE, Shalem O, Satija R, Raychowdhury R, Mertins P, Carr SA, Zhang F, Hacohen N, Regev A."
+  journal: Cell
+  year: 2015
+  figure: parsons_zfhx3.png
+
+- title: Single-cell analysis reveals key roles for Bcl11a in regulating stem cell fate decisions.﻿
+  link: http://genomebiology.biomedcentral.com/articles/10.1186/s13059-015-0778-y
+  author: "Powers A, Satija R."
+  journal: Genome Biology
+  year: 2015
+  figure: powers_bcl11a.png
+
+- title: Spatial reconstruction of single-cell gene expression data.
+  link: http://www.nature.com/nbt/journal/vaop/ncurrent/full/nbt.3192.html
+  author: "Satija R*, Farrell JA*, Gennert D, Schier AF, Regev A."
+  journal: Nature Biotechnology
+  year: 2015
+  figure: satija_spatial_reconstruction.png
+
+- title: Highly Parallel Genome-wide Expression Profiling of Individual Cells using nanoliter droplets.
+  link: http://www.cell.com/cell/abstract/S0092-8674(15)00549-8
+  author: "Macosko EZ, Basu A, Satija R, Nemesh J, Shekhar K, Goldman M, Tirosh I, Bialas A, Kamitaki N, Martersteck E, Trombetta JT, Weitz DA, Sanes JR, Shalek AK, Regev A, McCaroll SA."
+  journal: Cell
+  year: 2015
+  figure: macosko_dropseq.png
+
+- title: Dynamic profiling of the protein life cycle in response to pathogens.
+  link: http://www.sciencemag.org/content/347/6226/1259038.full
+  author: "Jovanovic M*, Rooney MA*, Mertins P,  Przybylski D, Chevrier N, Satija R,Rodriguez EH, Fields AP, Schwartz S, Raychowdhury R, Mumbach MR, Eisenhaure T, Rabani M, Gennert D, Lu D, Delorey T, Weissman JS, Carr SA, Hacohen N, and Regev A. "
+  journal: Science
+  year: 2015
+  figure: jovanovic_protein_pathogens.png
+
+- title: "Heterogeneity in immune responses: from populations to single cells."
+  link: http://www.sciencedirect.com/science/article/pii/S1471490614000520
+  author: "Satija R, Shalek AK."
+  journal: Trends in Immunology
+  year: 2014
+  figure: satija_immune_review.png
+
+- title: Single-Cell RNA-Seq Reveals Dynamic Paracrine Control of Cellular Variation.
+  link: http://www.nature.com/nature/journal/v510/n7505/full/nature13437.html
+  author: "Shalek AK*, Satija R*, Shuga J*, Trombetta JJ, Lu D, Gennert D, Chen P, Gertner RS, Gaublomme JT, Yosef N, Schwartz S, Fowler B, Weaver S, Wang J, Wang X, Ding R, Raychowdhury R, Friedman N, Hacohen N, Park H, May AP, and Regev A."
+  journal: Nature
+  year: 2014
+  figure: shalek_paracrine_control.png
+
+- title: Preparation of Single Cell RNA-Seq Libraries for Next Generation Sequencing.
+  link: "http://onlinelibrary.wiley.com/doi/10.1002/0471142727.mb0422s107/abstract;jsessionid=B94B9AA9E812D3A236E720776C2DD175.f03t01?deniedAccessCustomisedMessage=&userIsAuthenticated=false"
+  author: "Trombetta JJ*, Gennert D*, Lu D *, Satija R, Shalek AK, and Regev A."
+  journal: Current Protocols in Molecular Biology
+  year: 2014
+  figure: trombetta_lib_prep.png
+
+- title: Deconstructing transcriptional heterogeneity in pluripotent stem cells.
+  link: http://www.nature.com/nature/journal/v516/n7529/full/nature13920.html
+  author: "Kumar RM, Cahan P, Shalek AK, Satija R, DaleyKeyser AJ, Li H, Zhang J, Pardee K, Gennert D, Trombetta JJ, Ferrante TC, Regev A, Daley GQ & Collins JJ."
+  journal: Nature
+  year: 2014
+  figure: kumar_sc_het.png
+
+- title: Transcriptome-wide Mapping Reveals Widespread Dynamic-Regulated Pseudouridylation of ncRNA and mRNA.
+  link: http://www.sciencedirect.com/science/article/pii/S0092867414010988
+  author: "Schwartz S, Bernstein DA, Mumbach MR,  Jovanovic M, Herbst RH, León-Ricardo BX, Engreitz JM, Guttman M, Satija R, Lander ES, Fink G, & Regev A."
+  journal: Cell
+  year: 2014
+  figure: schwartz_pseudou.png
+
+- title: Whole-exome sequencing of circulating tumor cells provides a window into metastatic prostate cancer
+  link: http://www.nature.com/nbt/journal/v32/n5/full/nbt.2892.html
+  author: "Lohr JG, Adalsteinsson VA, Cibulskis K, ChoudhurD, Rosenberg M, Cruz-Gordillo P, Francis JM, Zhang CZ, Shalek AK, Satija R, Trombetta JJ, Lu D, Tallapragada N, Tahirova N, Kim S, Blumenstiel B, Sougnez C, Lowe A, Wong B, Auclair D, Van Allen EM, Nakabayashi M, Lis RT, Lee GSM, Li T, Chabot ME, Ly A, Taplin ME, Clancy TE, Loda M, Regev A, Meyerson M, Hahn WC, Kantoff PW, Golub TR, Getz G, Boehm JS & Love JC."
+  journal: Nature Biotechnology
+  year: 2014
+  figure: lohr_tumor_exome.png
+
+- title: Single-cell transcriptomics reveals bimodality in expression and splicing in immune cells.
+  link: http://www.nature.com/nature/journal/v498/n7453/full/nature12172.html
+  author: "Shalek AK*, Satija R*, Adiconis X, Gertner RS, Gaublomme JT, Raychowdhury R, Schwartz S, Yosef N, Malboeuf C, Lu D, Trombetta JJ, Gennert D, Gnirke A, Goren A, Hacohen N, Levin JZ,  Park H, Regev A. "
+  journal: Nature
+  year: 2013
+  figure: shalek_immune_bimodal.png
+
+- title: Comparative analysis of RNA sequencing methods for degraded or low-input samples.
+  link: http://www.nature.com/nmeth/journal/v10/n7/full/nmeth.2483.html
+  author: "Adiconis X, Borges-Rivera D, Satija R, DeLuca DS, Busby MA, Berlin AM, Sivachenko A, Thompson DA, Wysoker A, Fennell T, Gnirke A, Pochet N, Regev A, Levin JZ. "
+  journal: Nature Methods
+  year: 2013
+  figure: adiconis_rnaseq_method.png
+
+- title: "High-Resolution Mapping Reveals a Conserved, Widespread, Dynamic mRNA Methylation Program in Yeast Meiosis"
+  link: http://www.sciencedirect.com/science/article/pii/S0092867413013652
+  author: "Schwartz S, Agarwala SD, Mumbach MR, Jovanovic M, Mertins P, Shishkin A, Tabach Y, Mikkelsen TS, Satija R, Ruvkun G, Carr SA, Lander ES, Fink GR, & Regev A."
+  journal: Cell
+  year: 2013
+  figure: schwartz_meth_yeast.png
+
+- title: Dynamic regulatory network controlling TH17 cell differentiation
+  link: http://www.nature.com/nature/journal/v496/n7446/abs/nature11981.html
+  author: "Yosef N, Shalek AK, Gaublomme JT, Jin H, Lee Y, Awasthi A, Wu C, Karwacz K, Xiao S, Jorgolli M, Gennert D,  Satija R, ShakyaA, Lu DY, Trombetta JJ, Pillai MR,  Ratcliffe PJ, Coleman ML, Bix M, Tantin D,  Park H, Kuchroo VK & Regev A."
+  journal: Nature
+  year: 2013
+  figure: yosef_th17_diff.png
+
+- title: The TAGteam motif facilitates binding of 21 sequence-specific transcription factors in the Drosophila embryo.
+  link: "http://genome.cshlp.org/content/22/4/656.abstract?ijkey=b423d9cbbcd73b63ea8bda3d9bc9073297d67ada&keytype2=tf_ipsecsha"
+  author: "Satija R, Bradley RK."
+  journal: Genome Research
+  year: 2012
+  figure: satija_tagteam.png
+
+- title: "The Atypical Calpains: Evolutionary Analyses and Roles in Caenorhabditis elegans Cellular Degeneration"
+  link: http://journals.plos.org/plosgenetics/article?id=10.1371/journal.pgen.1002602
+  author: "Joyce PI, Satija R, Chen M, Kuwabara PE"
+  journal: PLoS Genetics
+  year: 2012
+  figure: joyce_calpains.png
+
+- title: Genome-wide functional element detection using pairwise statistical alignment outperforms multiple genome footprinting techniques.
+  link: http://bioinformatics.oxfordjournals.org/content/26/17/2116.full
+  author: "Satija R, Hein J, Lunter GA."
+  journal: Bioinformatics
+  year: 2010
+  figure: satija_functional_elements.png
+
+
+

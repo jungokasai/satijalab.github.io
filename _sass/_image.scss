@@ -1,0 +1,77 @@
+.ny-collab{
+    float: right;
+    margin: 0px 0px 10px 30;
+    padding-left: 75px;
+    @include media-query($img-break) {
+        float: left;
+        padding-left: $spacing-unit;
+    }
+}
+
+.profpic{
+    float: left;
+    padding-right: 75px;
+    clear:both;
+}
+
+.pub-pic{
+    float: left;
+    width: 20%;
+    padding-bottom: 500em;
+    margin-bottom: -500em;
+    padding-left: 20px;
+    @include media-query($pub-break) {
+        float: none;
+        padding-bottom: 20px;
+        padding-left: 0px;
+        width: 100%;
+        max-width: 200px;
+        display: block;
+        margin: auto;
+    }
+}
+
+.seurat-banner{
+    margin-bottom: 30px;
+}
+
+.button-row{
+    width: 80%;
+    padding-left: 10%;
+    float: left;
+    text-align: center;
+}
+
+.button {
+    background-color: $grey-btn;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
+    &:hover {
+        outline: 1px solid black;
+
+    }
+}
+
+#btn1{
+    float:left;
+}
+#btn3{
+    float:right;
+}
+
+
+.tutorial-left{
+    float:left;
+    max-width: 50%;
+}
+
+.tutorial-right{
+    max-width: 50%;
+    float:right;
+}

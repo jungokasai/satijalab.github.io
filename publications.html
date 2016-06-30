@@ -1,0 +1,35 @@
+---
+layout: default
+title: Publications
+permalink: /publications/
+---
+
+<div class= "publications-page">
+
+    {% assign count = site.data.publications.size %}
+
+    {% assign year = "0000" %}
+    {% for pub in site.data.publications %}
+        {% if year != pub.year %}
+            {% assign year = pub.year %}
+            {% if pub != site.data.publications.first %}
+                <div class = "div-bar"></div>
+            {% endif %}
+            <br><h2>{{pub.year}}</h2> <br>
+
+        {% endif %}
+            <div class = "pub-entry">
+                <div class = "wrapper" >
+                    <div class = "right-col">
+                        <p>
+                            {{ pub.author }} <br>
+                            <a href= "{{ pub.link }}" >{{ pub.title}}</a> <br>
+                            <b>{{ pub.journal}}. </b> {{pub.year}}
+                        </p>
+                    </div>
+                    <img class= "pub-pic" src="{{pub.figure | prepend: site.publication_photos}} ">
+                </div>
+            </div>
+    {% endfor %}
+
+</div>

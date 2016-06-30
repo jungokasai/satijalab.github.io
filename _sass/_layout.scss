@@ -1,0 +1,408 @@
+/**
+ * Entire page
+ */
+body {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+body, html {
+    height: 100%;
+    width: 100%;
+}
+
+/**
+ * Site header
+ */
+.site-header {
+    // Positioning context for the mobile navigation icon
+    position: relative;
+}
+
+.social-header {
+    height: 25px;
+    display: inline-block;
+    float: right;
+    margin-top: 25px;
+
+
+    a {
+        &:hover {
+            color: $text-color;
+            border-bottom: 0px solid black;
+        }
+    }
+}
+
+.div-bar{
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.site-title {
+    font-size: 53px;
+    font-family: 'Quicksand', sans-serif;
+    padding-left: 10px;
+    padding-right: 40px;
+    float: left;
+    line-height: 56px;
+    margin-bottom: 0;
+
+
+    &,
+    &:visited {
+        color: #3a41b8;
+    }
+    &:hover {
+        text-decoration: none;
+        border-bottom: none;
+    }
+}
+
+.site-nav {
+    float: right;
+    font-size: 13px;
+    line-height:56px;
+    z-index: 100 !important;
+
+
+    .menu-icon {
+        display: none;
+    }
+
+    .page-link {
+        color: $text-color;
+        line-height: $base-line-height;
+
+        &:hover{
+                color: $text-color;
+                border-bottom: 3px solid black;
+            }
+
+        // Gaps between nav items, but not on the last one
+        &:not(:last-child) {
+            margin-right: 12px;
+        }
+    }
+
+
+    @include media-query($nav-break) {
+        position: absolute;
+        top: 53px;
+        right: $spacing-unit / 2;
+        background-color: $background-color;
+        border: 1px solid $grey-color-light;
+        border-radius: 5px;
+        text-align: right;
+
+        .menu-icon {
+            display: block;
+            float: right;
+            width: 36px;
+            height: 26px;
+            line-height: 0;
+            padding-top: 10px;
+            text-align: center;
+            margin-bottom: 8px;
+
+            > svg {
+                width: 18px;
+                height: 15px;
+
+                path {
+                    fill: $grey-color-dark;
+                }
+            }
+        }
+
+        .trigger {
+            clear: both;
+            display: none;
+        }
+
+        &:hover .trigger {
+            position: relative;
+            display: block;
+            padding-bottom: 5px;
+
+        }
+
+        .page-link {
+            display: block;
+            padding: 5px 10px;
+
+            &:hover{
+                color: $text-color;
+                border-bottom: 3px solid black;
+            }
+
+            &:not(:last-child) {
+                margin-right: 0;
+            }
+            margin-left: 20px;
+        }
+    }
+}
+
+.front-matter{
+    position: relative;
+
+    @include media-query($img-break) {
+        p{
+            clear: both;
+        }
+    }
+
+}
+
+.front-closing{
+    color: $grey-text;
+    font-size: 16px;
+    text-align: justify;
+}
+
+
+.people-list{
+
+    .member{
+        padding-bottom: 60px;
+    }
+
+    h3{
+        font-size: 25px;
+        text-align: center;
+        padding-bottom: 0px;
+    }
+    p{
+        font-size: 18px;
+        text-align: center;
+    }
+
+    @include media-query($people-break) {
+        width: 400px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+
+        h3{
+            text-align: left;
+            clear: both;
+        }
+        p{
+            text-align: left;
+            clear:both;
+        }
+
+    }
+
+}
+
+.research-page{
+    text-align: justify;
+    p{
+        float: left;
+        max-width: 55%;
+    }
+
+    @include media-query($research-break) {
+        width: 400px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        p{
+            clear:both;
+            max-width: 100%;
+        }
+    }
+
+    .slideshow{
+        float: right;
+        max-width: 40%;
+        padding-left: 40px;
+
+        @include media-query($research-break) {
+            float: left;
+            clear: both;
+            max-width: 100%;
+            clear: both;
+            padding-left: 0px;
+
+        }
+    }
+}
+
+/**
+ * Dropdown section
+*/
+.panel-group{
+    float: left;
+    max-width: 55%;
+    .panel-title{
+        color: $grey-text;
+        font-weight:bold;
+    }
+}
+
+
+
+.publications-page{
+    .pub-entry{
+        clear:both;
+        padding-bottom: 30px;
+        overflow: hidden;
+        width: 100%;
+        .right-col{
+              float: left;
+              width: 80%;
+              margin-right: -1px;
+              padding-bottom: 500em;
+              margin-bottom: -500em;
+            @include media-query($pub-break) {
+                width: 100%;
+                display: block;
+            }
+        }
+    }
+
+    p{
+        clear: none;
+        text-align: left;
+    }
+
+    h2{
+        text-align: center;
+        color: black;
+        font-weight: bold;
+    }
+    a{
+        font-weight: bold;
+        text-decoration: underline;
+    }
+}
+
+
+.software-about{
+    p{
+        text-align: left;
+    }
+    ol {
+        font-size: 18px;
+    }
+    ul{
+        font-size: 16px;
+    }
+}
+
+
+.get-started{
+    h1{
+        font-weight:bold;
+    }
+    h2{
+        padding-top: 10px;
+        font-weight:bold;
+    }
+    ol{
+        margin-left: 40px;
+    }
+    ul{
+        margin-left: 40px;
+    }
+}
+
+.ident1{
+    margin-left: 20px;
+}
+
+/**
+ * Site footer
+ */
+
+.contact-footer-left {
+    float: left;
+    width: 40%
+}
+
+.contact-footer-right{
+    float:right;
+    width: 40%
+    margin-left 20px;
+}
+
+
+
+
+/**
+ * Page content
+ */
+.page-content {
+    padding: $spacing-unit 0;
+}
+
+.page-heading {
+    font-size: 20px;
+}
+
+.post-list {
+    margin-left: 0;
+    list-style: none;
+
+    > li {
+        margin-bottom: $spacing-unit;
+    }
+}
+
+.post-meta {
+    font-size: $small-font-size;
+    color: $grey-color;
+}
+
+.post-link {
+    display: block;
+    font-size: 24px;
+}
+
+
+
+/**
+ * Posts
+ */
+.post-header {
+    margin-bottom: $spacing-unit;
+}
+
+.post-title {
+    font-size: 42px;
+    letter-spacing: -1px;
+    line-height: 1;
+
+    @include media-query($on-laptop) {
+        font-size: 36px;
+    }
+}
+
+.post-content {
+    margin-bottom: $spacing-unit;
+
+    h2 {
+        font-size: 32px;
+
+        @include media-query($on-laptop) {
+            font-size: 28px;
+        }
+    }
+
+    h3 {
+        font-size: 26px;
+
+        @include media-query($on-laptop) {
+            font-size: 22px;
+        }
+    }
+
+    h4 {
+        font-size: 20px;
+
+        @include media-query($on-laptop) {
+            font-size: 18px;
+        }
+    }
+}

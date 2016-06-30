@@ -1,0 +1,64 @@
+- name: Rahul Satija
+  degree: "D. Phil, Statistics"
+  university: Oxford University
+  email: rsatija@nygenome.org
+  photo: rahul_satija.jpg
+
+- name: Ashley Powers
+  position: Associate Scientist
+  degree: "BS, Biology"
+  university: Massachusetts Institute of Technology
+  email: apowers@nygenome.org
+  photo: ashley_powers.jpg
+
+- name: Christoph Hafemeister
+  position: Postdoctoral Fellow
+  degree: "PhD, Biology"
+  university: New York University
+  email: chafemeister@nygenome.org
+  photo: christoph_hafemeister.png
+
+- name: Christian Mayer
+  position: Postdoctoral Fellow
+  addinfo1: "Joint postdoc with Gord Fishell, NYUMC"
+  degree: "PhD, Neuroscience"
+  university: "University of Hamburg, Germany"
+  addinfo2: "Diplom, University of Konstanz, Germany"
+  email: cmayer@nygenome.org
+  photo: christian_mayer.jpg
+
+- name: Lin Wu
+  position: Postdoctoral Fellow
+  addinfo1: "Joint postdoc with Dan Littman, NYUMC"
+  degree: PhD
+  university: Hong Kong University of Science and Technology
+  email: lwu@nygenome.org
+  photo: lin_wu.jpg
+
+- name: Shiwei Zheng,
+  position: Graduate Student
+  degree: "BS, Biology"
+  university: Zhejiang University
+  email: szheng@nygenome.org
+  photo: shiwei_zheng.png
+
+- name: Andrew Butler
+  position: Graduate Student
+  degree: "BS, Biology"
+  university: University of Texas at Austin
+  email: abutler@nygenome.org
+  photo: andrew_butler.png
+
+- name: Efthymia Papalexi
+  position: Graduate Student
+  degree: "BA, Biological Sciences"
+  university: Mount Holyoke College
+  email: epapalexi@nygenome.org
+  photo: efthymia_papalexi.png
+
+- name: Steve Niu
+  position: Master Student
+  degree: "BS, Cell Biology"
+  university: UC Davis
+  email: sniu@nygenome.org
+  photo: steve_niu.png
