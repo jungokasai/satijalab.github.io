@@ -4,11 +4,10 @@
     {
       "type": "Feature",
       "properties": {
-        "title": "Scooter",
-        "description": "Here's a dot",
+        "title": "New York Genome Center",
+        "description": "NYGC Location",
         "marker-size": "medium",
         "marker-color": "#3a41b8",
-        "marker-symbol": "",
         "stroke": "#555555",
         "stroke-opacity": 1,
         "stroke-width": 2,
