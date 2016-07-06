@@ -7,27 +7,29 @@ permalink: /people/
 <br>
 <div class = "people-list">
 {% for person in site.data.members %}
-    <div class = "member">
-        <div class = "wrapper">
-            <img class= "profpic" src="{{person.photo | prepend: site.member_photos}} ">
-            <h3>
-                {% if person.position %}
-                    {{person.name}}, {{ person.position }}
-                {% else %}
-                    {{ person.name }}
-                {% endif %}
-            </h3>
-            <p>
-                {% if person.addinfo1 %}
-                    {{ person.addinfo1 }} <br>
-                {% endif %}
-                {{ person.degree }}, {{ person.university }}<br>
-                {% if person.addinfo2 %}
-                    {{ person.addinfo2 }} <br>
-                {% endif %}
-                {{ person.email}}<br>
-            </p>
-        </div>
+    <div class ="member ">
+        <figure>
+            <img src="{{person.photo | prepend: site.member_photos}} ">
+            <figcaption>
+                <h3>
+                    {% if person.position %}
+                        {{person.name}} <br>{{ person.position }}
+                    {% else %}
+                        {{ person.name }} <br>
+                    {% endif %}
+                </h3>
+                <p>
+                    {% if person.addinfo1 %}
+                        {{ person.addinfo1 }} <br>
+                    {% endif %}
+                    {{ person.degree }} <br>{{ person.university }}<br>
+                    {% if person.addinfo2 %}
+                        {{ person.addinfo2 }} <br>
+                    {% endif %}
+                    {{ person.email}}<br>
+                </p>
+            </figcaption>
+        </figure>
     </div>
 {% endfor %}
 </div>
