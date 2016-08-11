@@ -1,15 +1,11 @@
 <div class="wrapper" >
     <img class = "seurat-banner" src="{{ "/img/seurat_banner.jpg" | prepend: site.imgurl }}"></img><br>
-    <div class = "button-row">
-        <a class="page-link" href={{ "install.html" | prepend: site.software_nav}}>
-            <button class="button" id ="btn1">Install</button>
-        </a>
-        <a class="page-link" href={{ "get_started.html" | prepend: site.software_nav }}>
-            <button class="button">Get Started</button>
-        </a>
-        <a class="page-link" href={{ "contact.html" | prepend: site.software_nav }}>
-            <button class="button" id ="btn3">Contact</button>
-        </a>
+    <div class="btn-group btn-group-justified">
+      <a href="/software/" class="btn ">About</a>
+      <a href="/software/install.html" class="btn ">Install</a>
+      <a href="/software/get_started.html" class="btn ">Get Started</a>
+      <a href="/software/faq" class="btn ">FAQ</a>
+      <a href="/software/contact.html" class="btn ">Contact</a>
     </div>
 </div>
-<br>
+

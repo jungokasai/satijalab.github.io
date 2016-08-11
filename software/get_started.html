@@ -1,84 +1,80 @@
 ---
-layout: default
+layout: software_layout
 title: Get Started
 ---
 
-{% include seurat_banner.html %}
+<h1>Getting started with Seurat</h1>
+<br>
+<p>
+    The input to Seurat is a normalized gene expression matrix, where the rows are genes, and the columns are single cells. To get started, first install the software, which should take less than a minute if you already have R installed. The tutorials below introduce  Seurat through guided analyses of published single cell RNA-seq datasets.
+</p>
+<br><br>
+<div class="div-bar"></div>
 
-<div class ="get-started">
-    <h1>Getting started with Seurat</h1>
-    <br>
-    <p>
-        The input to Seurat is a normalized gene expression matrix, where the rows are genes, and the columns are single cells. To get started, first install the software, which should take less than a minute if you already have R installed. The tutorials below introduce  Seurat through guided analyses of published single cell RNA-seq datasets.
-    </p>
+<h2 id="clustering">Tutorial - Unsupervised clustering and marker discovery</h2>
+<p>
+    <b>Dataset:</b> 301 single cells across diverse tissues from (Pollen et al., Nature Biotechnology, 2014) <br>
+    <a href="http://www.broadinstitute.org/~rahuls/seurat/seurat_files_nbt.zip"><b>Accompanying data files:</b></a> input data, R markdown files, pre-computed Seurat objects (place in ~/seurat_files)
     <br><br>
-    <div class="div-bar"></div>
-
-    <h2 id="clustering">Tutorial - Unsupervised clustering and marker discovery</h2>
-    <p>
-        <b>Dataset:</b> 301 single cells across diverse tissues from (Pollen et al., Nature Biotechnology, 2014) <br>
-        <a href="http://www.broadinstitute.org/~rahuls/seurat/seurat_files_nbt.zip"><b>Accompanying data files:</b></a> input data, R markdown files, pre-computed Seurat objects (place in ~/seurat_files)
-        <br><br>
-        First, we introduce the Seurat clustering approach on 301 single cells profiled with the Fluidigm C1
-    </p>
-    <div class = "wrapper">
-        <a class="page-link" href={{ "seurat_clustering_tutorial_part1.html" | prepend: site.software_nav }}>
-            <img class = "tutorial-left" src="{{ "/img/cluster_tutorial_1.jpg" | prepend: site.imgurl }}">
-        </a>
-        <a class="page-link" href={{ "seurat_clustering_tutorial_part2.html" | prepend: site.software_nav }}>
-            <img class = "tutorial-right" src="{{ "/img/cluster_tutorial_2.jpg" | prepend: site.imgurl }}">
-        </a>
-    </div>
-    <br>
-    <p>
-        Seurat combines linear and non-linear dimensionality reduction algorithms for unsupervised clustering of single cells. The approach can be described briefly:
-    </p>
-    <ol>
-        <li>Identification of highly variable genes</li>
-        <li>Linear dimensional reduction (PCA) on variable genes</li>
-        <li>Determine statistically significant principal components</li>
-        <li>Non-linear dimensional reduction (t-SNE) on the significant PC scores (i.e., spectral t-SNE)</li>
-        <li>Density clustering to classify distinct groups of cells on the t-SNE map</li>
-        <li>Marker discovery, visualization, and downstream analysis</li>
-    </ol>
-    <ul>
-        <li> Optional steps after (2) to grow gene list through PCA projection, and after (4) to project additional cells onto the t-SNE map</li>
-    </ul>
-    <br>
-    <p>
-        We applied this same approach to group ~45,000 single retinal cells, produced by Drop-Seq, into 39 robust clusters.  A full tutorial on this dataset is coming soon, and you can explore the technique further at <a href="http://www.dropseq.org">http://www.dropseq.org</a>
-    </p>
-
-    <figure>
-        <img src="{{ "/img/retina_dropseq.jpg" | prepend: site.imgurl }}">
-        <figcaption>RNA-seq from 44,808 single retinal cells, from <a href="http://www.cell.com/cell/abstract/S0092-8674(15)00549-8">Macasko et al., Cell, 2015</a></figcaption>
-    </figure>
-    <br>
-    <div class="div-bar"></div>
-
-    <h2 id="spatial">Tutorial - Spatial Inference of single cell data</h2>
-    <p>
-        <b>Dataset:</b> 851 single cells from Zebrafish embryogenesis (Satija*, Farrell* et al., Nature Biotechnology, 2015)
-        <a href="http://www.broadinstitute.org/~rahuls/seurat/seurat_files_zfin.zip"><b>Accompanying data files:</b></a> input data, R markdown files, pre-computed Seurat objects (place in ~/seurat_files)
-        <br><br>
-        Here, we introduce a computational strategy to infer the original spatial location of a single cell based on its gene expression data. Seurat accomplishes this by leveraging pre-existing in situ hybridization data ('spatial reference map'), which are available or can be easily generated for many developing organisms. 
-    </p>
-
-    <div class = "wrapper">
-        <a class="page-link" href={{ "seurat_spatial_tutorial_part1.html" | prepend: site.software_nav }}>
-            <img class = "tutorial-left" src="{{ "/img/spatial_tutorial_1.jpg" | prepend: site.imgurl }}">
-        </a>
-        <a class="page-link" href={{ "seurat_spatial_tutorial_part2.html" | prepend: site.software_nav }}>
-            <img class = "tutorial-right" src="{{ "/img/spatial_tutorial_2.jpg" | prepend: site.imgurl }}">
-        </a>
-    </div>
-    <div class = "wrapper">
-        <a class="page-link" href={{ "seurat_spatial_tutorial_part3.html" | prepend: site.software_nav }}>
-            <img class = "tutorial-left" src="{{ "/img/spatial_tutorial_3.jpg" | prepend: site.imgurl }}">
-        </a>
-        <a class="page-link" href={{ "seurat_spatial_tutorial_part4.html" | prepend: site.software_nav }}>
-            <img class = "tutorial-right" src="{{ "/img/spatial_tutorial_4.jpg" | prepend: site.imgurl }}">
-        </a>
-    </div>
-
+    First, we introduce the Seurat clustering approach on 301 single cells profiled with the Fluidigm C1
+</p>
+<div class = "wrapper">
+    <a class="page-link" href={{ "seurat_clustering_tutorial_part1.html" | prepend: site.software_nav }}>
+        <img class = "tutorial-left" src="{{ "/img/cluster_tutorial_1.jpg" | prepend: site.imgurl }}">
+    </a>
+    <a class="page-link" href={{ "seurat_clustering_tutorial_part2.html" | prepend: site.software_nav }}>
+        <img class = "tutorial-right" src="{{ "/img/cluster_tutorial_2.jpg" | prepend: site.imgurl }}">
+    </a>
 </div>
+<br>
+<p>
+    Seurat combines linear and non-linear dimensionality reduction algorithms for unsupervised clustering of single cells. The approach can be described briefly:
+</p>
+<ol>
+    <li>Identification of highly variable genes</li>
+    <li>Linear dimensional reduction (PCA) on variable genes</li>
+    <li>Determine statistically significant principal components</li>
+    <li>Non-linear dimensional reduction (t-SNE) on the significant PC scores (i.e., spectral t-SNE)</li>
+    <li>Density clustering to classify distinct groups of cells on the t-SNE map</li>
+    <li>Marker discovery, visualization, and downstream analysis</li>
+</ol>
+<ul>
+    <li> Optional steps after (2) to grow gene list through PCA projection, and after (4) to project additional cells onto the t-SNE map</li>
+</ul>
+<br>
+<p>
+    We applied this same approach to group ~45,000 single retinal cells, produced by Drop-Seq, into 39 robust clusters.  A full tutorial on this dataset is coming soon, and you can explore the technique further at <a href="http://www.dropseq.org">http://www.dropseq.org</a>
+</p>
+
+<figure>
+    <img src="{{ "/img/retina_dropseq.jpg" | prepend: site.imgurl }}">
+    <figcaption>RNA-seq from 44,808 single retinal cells, from <a href="http://www.cell.com/cell/abstract/S0092-8674(15)00549-8">Macasko et al., Cell, 2015</a></figcaption>
+</figure>
+<br>
+<div class="div-bar"></div>
+
+<h2 id="spatial">Tutorial - Spatial Inference of single cell data</h2>
+<p>
+    <b>Dataset:</b> 851 single cells from Zebrafish embryogenesis (Satija*, Farrell* et al., Nature Biotechnology, 2015)
+    <a href="http://www.broadinstitute.org/~rahuls/seurat/seurat_files_zfin.zip"><b>Accompanying data files:</b></a> input data, R markdown files, pre-computed Seurat objects (place in ~/seurat_files)
+    <br><br>
+    Here, we introduce a computational strategy to infer the original spatial location of a single cell based on its gene expression data. Seurat accomplishes this by leveraging pre-existing in situ hybridization data ('spatial reference map'), which are available or can be easily generated for many developing organisms.
+</p>
+
+<div class = "wrapper">
+    <a class="page-link" href={{ "seurat_spatial_tutorial_part1.html" | prepend: site.software_nav }}>
+        <img class = "tutorial-left" src="{{ "/img/spatial_tutorial_1.jpg" | prepend: site.imgurl }}">
+    </a>
+    <a class="page-link" href={{ "seurat_spatial_tutorial_part2.html" | prepend: site.software_nav }}>
+        <img class = "tutorial-right" src="{{ "/img/spatial_tutorial_2.jpg" | prepend: site.imgurl }}">
+    </a>
+</div>
+<div class = "wrapper">
+    <a class="page-link" href={{ "seurat_spatial_tutorial_part3.html" | prepend: site.software_nav }}>
+        <img class = "tutorial-left" src="{{ "/img/spatial_tutorial_3.jpg" | prepend: site.imgurl }}">
+    </a>
+    <a class="page-link" href={{ "seurat_spatial_tutorial_part4.html" | prepend: site.software_nav }}>
+        <img class = "tutorial-right" src="{{ "/img/spatial_tutorial_4.jpg" | prepend: site.imgurl }}">
+    </a>
+</div>
+

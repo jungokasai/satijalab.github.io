@@ -29,38 +29,16 @@
     margin-bottom: 30px;
 }
 
-.button-row{
-    width: 80%;
-    padding-left: 10%;
-    float: left;
-    text-align: center;
-}
 
-.button {
+.btn
+{
     background-color: $grey-btn;
-    border: none;
     color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-
-    &:hover {
-        outline: 1px solid black;
+    border-color: white;
+    &:hover{
+        color:white;
+        border: 0;
     }
-
-    @include media-query($software-break) {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-}
-
-#btn1{
-    float:left;
-}
-#btn3{
-    float:right;
 }
 
 
