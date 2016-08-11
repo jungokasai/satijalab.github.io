@@ -9,22 +9,22 @@ title: Install
 
 <p>(If you have installed a previous version of Seurat, it is recommended that you restart your R session before loading the new version)</p>
 
-<div class = "ident1">
+<div class>
 
 	<ol style="list-style-type: decimal">
 	<li><a href="http://http://www.r-project.org/">Install R (v &gt;= 3.1)</a></li>
 	<li>Recommended : <a href="http://www.rstudio.com/products/rstudio/download/">Install R Studio</a></li>
 	<li>Install the “devtools” package from Hadley Wickham</li>
-	</ol>
-	<pre><code># Enter commands in R (or R studio, if installed)
+		<pre><code class="language-r"># Enter commands in R (or R studio, if installed)
 install.packages(&quot;devtools&quot;)
-library(devtools)</code></pre>
+library(devtools)</code ></pre>
+	</ol>
 	<ol start="4" style="list-style-type: decimal">
 	<li>Install Seurat - directly from <a href="https://github.com/satijalab/seurat">GitHub</a></li>
-	</ol>
-	<pre><code>install_github(&quot;satijalab/seurat&quot;)
+		<pre><code class = "language-r">install_github(&quot;satijalab/seurat&quot;)
 library(Seurat)</code></pre>
+	</ol>
 	<ul>
-	<li>Note : If you would like to visualize the Zebrafish embryo (using Jeff Farrell’s beautiful RGL functions) in Part 4 of the Zebrafish tutorial, please install an X11 client (i.e. <a href="http://xquartz.macosforge.org/landing/">XQuartz</a>) and the <code>rgl</code> package in R using <code>install.packages(&quot;rgl&quot;)</code>.</li>
+	<li>Note : If you would like to visualize the Zebrafish embryo (using Jeff Farrell’s beautiful RGL functions) in Part 4 of the Zebrafish tutorial, please install an X11 client (i.e. <a href="http://xquartz.macosforge.org/landing/">XQuartz</a>) and the <strong>rgl</strong> package in R using <code class = "language-r">install.packages(&quot;rgl&quot;)</code>.</li>
 	</ul>
 </div>
