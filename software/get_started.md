@@ -21,12 +21,6 @@ Seurat combines linear and non-linear dimensionality reduction algorithms for un
 5. Non-linear dimensional reduction (t-SNE) on the significant PC scores (i.e. spectral t-SNE) for cluster visualization
 6. Marker discovery, visualization, and downstream analysis
 
-We applied this same approach to group ~45,000 single retinal cells, produced by Drop-Seq, into 39 robust clusters. A full tutorial on this dataset is coming soon, and you can explore the technique further [here](http://www.dropseq.org).
-
-![]({{ "/img/retina_dropseq.jpg" | prepend: site.imgurl }})
-
-
-*RNA-seq from 44,808 single retinal cells, from [Macasko et al., Cell, 2015](http://www.cell.com/cell/abstract/S0092-8674(15)00549-8)*
 
 ## Previous versions and tutorials
 All of the old tutorials be found [here]({{ "/software/old-get-started/" | prepend: base.url  }}) and all of the code is available on [github](https://github.com/{{ site.github_username }}/seurat).
