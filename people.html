@@ -26,7 +26,7 @@ permalink: /people/
                     {% if person.addinfo2 %}
                         {{ person.addinfo2 }} <br>
                     {% endif %}
-                    {{ person.email}}<br>
+                    <a href = "mailto:{{person.email}}"> {{person.email}}</a><br>
                 </p>
             </figcaption>
         </figure>

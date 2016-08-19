@@ -30,11 +30,12 @@
 }
 
 
-.btn
+.blk-btn
 {
     background-color: $grey-btn;
     color: white;
-    border-color: white;
+    border-color: white !important;
+    margin-right: 5px !important;
     &:hover{
         color:white;
         border: 0;

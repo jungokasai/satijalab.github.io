@@ -167,6 +167,9 @@ body, html {
     margin-left: $spacing-unit;
     display: flex;
     flex-wrap: wrap;
+    a{
+        text-decoration: none;
+    }
     .member {
       display: inline-block;
       margin-bottom: 8px;
