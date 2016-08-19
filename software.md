@@ -22,7 +22,7 @@ All methods emphasize clear, attractive, and interpretable visualizations, and w
 Seurat was written by Rahul Satija, with input from [Jeff Farrell](mailto:jfarrell@g.harvard.edu), [Karthik Shekhar](mailto:karthik@broadinstitute.org), and [generous contributors]({{ "contact.html" | prepend: site.software_nav }}), and is released under the GNU Public License (GPL 3.0).
 
 
-# News
+## News
 **August 22, 2016:** Version 1.3 released
 
 * Updated clustering algorithms

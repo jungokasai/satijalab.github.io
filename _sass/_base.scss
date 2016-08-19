@@ -67,15 +67,16 @@ figcaption {
  */
 ul, ol {
     margin-left: 35px;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 li {
+    margin-bottom: 5px;
     > ul,
     > ol {
-         margin-bottom: 0;
+         margin-bottom: 5px;
          font-size: 16px;
-         padding-left: 2em;
+         padding-left: 15px;
         a {
             text-decoration:underline;
         }
@@ -210,16 +211,25 @@ pre {
 }
 
 h1{
-    font-size: 32px;
-    margin-bottom: 25px;
+    font-size: 30px;
+    margin-bottom: 30px;
 }
 
 h2 {
-    font-size: 28px;
-    margin-bottom:25px;
-    margin-top: 20px;
+    font-size: 26px;
+    margin-bottom:30px;
+    margin-top: 25px;
 }
 
+h3{
+    font-size: 22px;
+    margin-bottom:10px;
+    margin-top: 25px;
+}
+
+h4{
+    font-size: 20px;
+}
 
 i {
     display: inline-block;
@@ -234,7 +244,7 @@ main{
 
 p {
     color: $grey-text;
-    font-size: 18px;
+    font-size: 16px;
     text-align: justify;
     a {
             text-decoration:underline;
