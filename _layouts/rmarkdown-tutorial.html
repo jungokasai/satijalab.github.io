@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include head.html %}
+
+<body>
+
+  {% include header.html %}
+
+  {% include seurat_banner.html %}
+
+  <main>
+    <div class = "wrapper">
+      <div class = "rmarkdown-tutorial">
+          {{ content }}
+      </div>
+    </div>
+  </main>
+
+  {% include footer.html %}
+   <script>
+          $('.highlighter-rouge').addClass('language-r');
+          $('.highlighter-rouge').removeClass('highlighter-rouge');
+          $('.highlight').removeClass('highlight');
+  </script>
+
+</body>
+</html>
