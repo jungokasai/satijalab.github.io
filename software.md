@@ -6,27 +6,28 @@ permalink: /software/
 
 # About Seurat
 
- Seurat is an R package designed for the analysis and visualization of single cell RNA-seq data. It contains easy-to-use implementations of commonly used analytical techniques, including the identification of highly variable genes, dimensionality reduction (PCA, ICA, t-SNE), standard unsupervised clustering algorithms (density clustering, hierarchical clustering, k-means), and the discovery of differentially expressed genes and markers.
+ Seurat is an R package designed for QC, analyses, and exploration of single cell RNA-seq data. It contains robust and scalable implementations of easy-to-use implementations of commonly used analytical techniques, including the identification of highly variable genes, dimensionality reduction (PCA, ICA, t-SNE), standard unsupervised clustering algorithms (density clustering, hierarchical clustering, k-means), and the discovery of differentially expressed genes and markers.
 
 Seurat also features two recently developed computational methods for single cell analysis:
 
 1. Unsupervised clustering and discovery of cell types and states [(Macosko, Basu, Satija et al., Cell, 2015)](http://www.cell.com/cell/abstract/S0092-8674(15)00549-8)
-	* Clustering algorithm combining linear and non-linear dimensional reduction techniques (i.e. 'spectral' t-SNE)
-	* [Tutorial: Unsupervised identification of cell types and biomarkers from single cell RNA-seq data]({{"get_started.html" | prepend: site.software_nav}})
-2. Spatial reconstruction of single cell data [(Satija*, Farrell* et al., Nature Biotechnology, 2015)](http://www.nature.com/nbt/journal/vaop/ncurrent/full/nbt.3192.html)
+	* Updated approach: Combining dimensional reduction with graph-based clustering
+	* [Tutorial: Unsupervised identification of immune cell types and biomarkers from 2,700 PMBCs (10X Chromium)]({{"get_started.html" | prepend: site.software_nav}})
+2. Spatial reconstruction of single cell data [(Satija\*, Farrell\* et al., Nature Biotechnology, 2015)](http://www.nature.com/nbt/journal/vaop/ncurrent/full/nbt.3192.html)
 	* Infers the original location of a single cell based on its gene expression, and a spatial reference map
 	* [Tutorial: Inferring spatial localization of single cells during Zebrafish embryogenesis]({{"old-get-started.html" | prepend: site.software_nav}})
 
 All methods emphasize clear, attractive, and interpretable visualizations, and were designed to be [easily used]({{"get_started.html" | prepend: site.software_nav}}) by both dry-lab and wet-lab researchers.
 
-Seurat was written by Rahul Satija, with input from [Jeff Farrell](mailto:jfarrell@g.harvard.edu), [Karthik Shekhar](mailto:karthik@broadinstitute.org), and [generous contributors]({{ "contact.html" | prepend: site.software_nav }}), and is released under the GNU Public License (GPL 3.0).
+Seurat is written and maintained by the Satija lab, in particular by Andrew Butler, Christoph Hafemeister, and Shiwei Zheng. We are also grateful for input from [Jeff Farrell](mailto:jfarrell@g.harvard.edu), [Karthik Shekhar](mailto:karthik@broadinstitute.org), and [generous contributors]({{ "contact.html" | prepend: site.software_nav }}), and is released under the GNU Public License (GPL 3.0).
 
 
 ## News
 **August 22, 2016:** Version 1.3 released
 
-* Updated clustering algorithms
-* Easy removal of technical artifacts
+* Improved clustering approach - see FAQ for details
+* All functions support sparse matrices
+* Methods for removing unwanted sources of variation
 * Consistent function names
 * Updated visualizations
 
