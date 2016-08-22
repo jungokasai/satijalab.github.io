@@ -8,8 +8,7 @@ permalink: /software/faq
 ### 1. What's new in the latest version of Seurat?
 * **New functionality**
 	* **Graph-based clustering**: We previously clustered cells based on their relative position in the tSNE plot. In our updated version, we now use the tSNE exclusively for visualization, and cluster based on a 'community detection' approach similar to one previously proposed for analyzing CyTOF data [Levine et al, Cell 2015](http://www.cell.com/cell/references/S0092-8674(15)00637-6). Importantly, our distance metric between cells is still computed in PCA space, as in [Macosko et al, 2015](http://www.ncbi.nlm.nih.gov/pubmed/26000488). While the new approach often returns similar results, and is consistent with the tSNE visualization, we have found that graph-based clustering can more sensitively detect subtle sources of heterogeneity between cell populations.
-	* **Methods for removing unwanted sources of variation**: The *RegressOut()* function has been added to enable removing unwanted effects from the
-	data through linear regression.
+	* **Methods for removing unwanted sources of variation**: Use *RegressOut()* can be used to mitigate confounding sources of noise (batch, cell cycle, variation in alignment rate, etc.)
 	* **PCA**: PCA  models each cell as a linear combination of genes and we've added support for the irlba package in *PCAFast().*
 * **Speed improvements**
 	* All function support sparse matrices
@@ -24,9 +23,8 @@ permalink: /software/faq
 	* **General improvements to documentation and small bug fixes**
 
 
-### 2. How do I select which PCs to use?
-* A key step to our  approach involves selecting a set of principal components (PCs) for downstream clustering analysis. Essentially, each PC represents a robust 'metagene' --- a linear combination of hundreds to thousands of individual transcripts --- that is robust to drop-out events in any individual gene. However, estimating the true dimensionalityof a dataset is a challenging and common problem in machine learning. We have three main approaches for trying to estimate this
-parameter.
+### 2. How do I select which PCs to use for clustering?
+* A key step to our clustering approach involves selecting a set of principal components (PCs) for downstream clustering analysis. Essentially, each PC represents a robust 'metagene' --- a linear combination of hundreds to thousands of individual transcripts --- that is robust to drop-out events in any individual gene. However, estimating the true dimensionality of a dataset is a challenging and common problem in machine learning. We have three main approaches for trying to estimate this parameter.
 	1. Jackstraw: This is a statistical resampling procedure which is used to essentially construct a null distribution for PC
 	scores and will associate each PC with a p-value to enable the assessment of signficance in a more formal statistical framework.
 	2. Elbow Plot: We have found that the percent of variance explained by each PC tends to flatten out and become negligible in

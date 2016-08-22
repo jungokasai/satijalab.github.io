@@ -12,13 +12,13 @@ This tutorial walks through analyzing a dataset of 2,700 Peripheral Blood Mononu
 
 [![PBMC-Tutorial]({{"/img/pbmc-tutorial.svg" | prepend: site.imgurl }})]({{ "pbmc-tutorial.html" | prepend: site.software_nav }})
 
-Seurat combines linear and non-linear dimensionality reduction algorithms for unsupervised clustering of single cells. The approach can be described briefly:
+Seurat combines dimensionality reduction and graph-based partioniong algorithms for unsupervised clustering of single cells. The approach can be described briefly:
 
 1. Identification of highly variable genes
 2. Linear dimensionality reduction (PCA) on variable genes
 3. Determine significant principal components
 4. Graph based clustering to classify distinct groups of cells
-5. Non-linear dimensional reduction (t-SNE) on the significant PC scores (i.e. spectral t-SNE) for cluster visualization
+5. Non-linear dimensional reduction (t-SNE) for cluster visualization
 6. Marker discovery, visualization, and downstream analysis
 
 
