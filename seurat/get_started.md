@@ -5,10 +5,10 @@ title: Get Started
 
 # Getting Started with Seurat
 
-The input to Seurat is a gene expression matrix, where the rows are genes and the columns are single cells. To get started, first [install]({{"/software/install/"" | prepend: base.url}}) the software and load the package library.
+The input to Seurat is a gene expression matrix, where the rows are genes and the columns are single cells. To get started, first [install]({{"/seurat/install/"" | prepend: base.url}}) the software and load the package library.
 
 ## Tutorial -- Guided Clustering of 3K PBMC
-This tutorial walks through analyzing a dataset of 2,700 Peripheral Blood Mononuclear Cells (PBMCs) made publically available by 10X Genomics using Seurat. The raw data can be found [here](https://s3-us-west-2.amazonaws.com/10x.files/samples/cell/pbmc3k/pbmc3k_filtered_gene_bc_matrices.tar.gz). The tutorial is also available as an R markdown file [here](https://raw.githubusercontent.com/satijalab/satijalab.github.io/master/software/pbmc-tutorial.Rmd ).
+This tutorial walks through analyzing a dataset of 2,700 Peripheral Blood Mononuclear Cells (PBMCs) made publically available by 10X Genomics using Seurat. The raw data can be found [here](https://s3-us-west-2.amazonaws.com/10x.files/samples/cell/pbmc3k/pbmc3k_filtered_gene_bc_matrices.tar.gz). The tutorial is also available as an R markdown file [here](https://raw.githubusercontent.com/satijalab/satijalab.github.io/master/seurat/pbmc-tutorial.Rmd ).
 
 [![PBMC-Tutorial]({{"/img/pbmc-tutorial.svg" | prepend: site.imgurl }})]({{ "pbmc-tutorial.html" | prepend: site.seurat_nav }})
 
@@ -23,4 +23,4 @@ Seurat combines dimensionality reduction and graph-based partioniong algorithms 
 
 
 ## Previous versions and tutorials
-All of the old tutorials be found [here]({{ "/software/old-get-started/" | prepend: base.url  }}) and all of the code is available on [github](https://github.com/{{ site.github_username }}/seurat).
+All of the old tutorials be found [here]({{ "/seurat/old-get-started/" | prepend: base.url  }}) and all of the code is available on [github](https://github.com/{{ site.github_username }}/seurat).
