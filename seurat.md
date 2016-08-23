@@ -6,7 +6,7 @@ permalink: /seurat/
 
 # About Seurat
 
- Seurat is an R package designed for QC, analyses, and exploration of single cell RNA-seq data. It contains robust and scalable implementations of easy-to-use implementations of commonly used analytical techniques, including the identification of highly variable genes, dimensionality reduction (PCA, ICA, t-SNE), standard unsupervised clustering algorithms (density clustering, hierarchical clustering, k-means), and the discovery of differentially expressed genes and markers.
+ Seurat is an R package designed for QC, analysis, and exploration of single cell RNA-seq data. It contains robust and scalable implementations of easy-to-use implementations of commonly used analytical techniques, including the identification of highly variable genes, dimensionality reduction (PCA, ICA, t-SNE), standard unsupervised clustering algorithms (density clustering, hierarchical clustering, k-means), and the discovery of differentially expressed genes and markers.
 
 Seurat also features two recently developed computational methods for single cell analysis:
 
@@ -19,7 +19,7 @@ Seurat also features two recently developed computational methods for single cel
 
 All methods emphasize clear, attractive, and interpretable visualizations, and were designed to be [easily used]({{"get_started.html" | prepend: site.seurat_nav}}) by both dry-lab and wet-lab researchers.
 
-Seurat is written and maintained by the Satija lab, in particular by [Andrew Butler](mailto:abutler@nygenome.org), [Christoph Hafemeister](mailto:chafemeister@nygenome.org), and [Shiwei Zheng](mailto:szheng@nygenome.org). We are also grateful for the contributions of [Jeff Farrell](mailto:jfarrell@g.harvard.edu), [Karthik Shekhar](mailto:karthik@broadinstitute.org), and [other generous contributors]({{ "contact.html" | prepend: site.seurat_nav }}), and is released under the GNU Public License (GPL 3.0).
+Seurat is developed and maintained by the Satija lab, in particular by [Andrew Butler](mailto:abutler@nygenome.org), [Christoph Hafemeister](mailto:chafemeister@nygenome.org), and [Shiwei Zheng](mailto:szheng@nygenome.org). We are also grateful for significant ideas and code from [Jeff Farrell](mailto:jfarrell@g.harvard.edu), [Karthik Shekhar](mailto:karthik@broadinstitute.org), and [other generous contributors]({{ "contact.html" | prepend: site.seurat_nav }}), and is released under the GNU Public License (GPL 3.0).
 
 
 ## News
