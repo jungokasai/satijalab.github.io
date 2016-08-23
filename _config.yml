@@ -21,12 +21,12 @@ navpages:
     link: /research/
   - name: Publications
     link: /publications/
-  - name: Software
-    link: /software/
+  - name: Seurat
+    link: /seurat/
   - name: Join/Contact
     link: /join_contact/
 
-software_nav: /software/
+seurat_nav: /seurat/
 
 # Build settings
 markdown: kramdown
