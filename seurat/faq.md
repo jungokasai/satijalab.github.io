@@ -8,7 +8,7 @@ permalink: /seurat/faq
 ### 1. What's new in the latest version of Seurat?
 * **New functionality**
 	* **Graph-based clustering**: We previously clustered cells based on their relative position in the tSNE plot. In our updated version, we now use the tSNE exclusively for visualization, and cluster based on a 'community detection' approach similar to one previously proposed for analyzing CyTOF data [Levine et al, Cell 2015](http://www.cell.com/cell/references/S0092-8674(15)00637-6). Importantly, our distance metric between cells is still computed in PCA space, as in [Macosko et al, 2015](http://www.ncbi.nlm.nih.gov/pubmed/26000488). While the new approach often returns similar results, and is consistent with the tSNE visualization, we have found that graph-based clustering can more sensitively detect subtle sources of heterogeneity between cell populations.
-	* **Methods for removing unwanted sources of variation**: Use *RegressOut()* can be used to mitigate confounding sources of noise (batch, cell cycle, variation in alignment rate, etc.)
+	* **Methods for removing unwanted sources of variation**: *RegressOut()* can be used to mitigate confounding sources of noise (batch, cell cycle, variation in alignment rate, etc.)
 	* **PCA**: PCA  models each cell as a linear combination of genes and we've added support for the irlba package in *PCAFast().*
 * **Speed improvements**
 	* All function support sparse matrices
