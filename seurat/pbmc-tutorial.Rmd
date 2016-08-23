@@ -270,6 +270,6 @@ FeaturePlot(pbmc, c("S100A4", "CCR7"), cols.use = c("green", "blue"))
 The memory/naive split is bit weak, and we would probably benefit from looking at more cells to see if this becomes more convincing (stay tuned!). In the meantime, we can restore our old cluster identities for downstream processing.
 
 ```{r restore, cache = T }
-pbmc <- SetIdent(pbmc, ident.use = "ClusterNames_0.6")
+pbmc <- SetAllIdent(pbmc, id = "ClusterNames_0.6")
 ```
 
