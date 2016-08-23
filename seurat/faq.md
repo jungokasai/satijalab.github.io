@@ -25,24 +25,18 @@ permalink: /seurat/faq
 
 ### 2. How do I select which PCs to use for clustering?
 * A key step to our clustering approach involves selecting a set of principal components (PCs) for downstream clustering analysis. Essentially, each PC represents a robust 'metagene' --- a linear combination of hundreds to thousands of individual transcripts --- that is robust to drop-out events in any individual gene. However, estimating the true dimensionality of a dataset is a challenging and common problem in machine learning. We have three main approaches for trying to estimate this parameter.
-	1. Jackstraw: This is a statistical resampling procedure which is used to essentially construct a null distribution for PC
+	1. jackStraw: This is a statistical resampling procedure which is used to essentially construct a null distribution for PC
 	scores and will associate each PC with a p-value to enable the assessment of signficance in a more formal statistical framework.
-	2. Elbow Plot: We have found that the percent of variance explained by each PC tends to flatten out and become negligible in
-	comparison to higher components after a certain point. Also, this point generally corresponds pretty well with the significant PCs
-	and is much faster to compute than running Jackstraw.
-	3. Supervised analysis: To be sure that you are including the right PCs, a supervised look at several features is recommended.
-	First, by plotting a heatmap of the PCs using *PCHeatmap()* is often useful to see where the signal is degrading beyond the point
-	of being informative. Also, looking at the genes that define each PC can be useful to help exclude PCs that may be driven primarily
-	by things like ribosomal/mitochondrial genes or cell cycle genes.
+	2. Elbow Plot: Plotting the eigenvalues in decreasing order (scree plot) is a useful visual heuristic -- the 'elbow' in the plot tends to reflect a transition from informative PCs to those that explain comparatively little variance. This point generally corresponds well with the significant PCs identified via the jackStraw, but is much faster to obtain.
+	3. Supervised analysis: We suggest that users explore the PCs chosen for downstream analysis. *PCHeatmap()* can display the 'extremes' across both genes and cells, and can be useful to help exclude PCs that may be driven primarily by ribosomal/mitochondrial or cell cycle genes.
 
 * In our latest [tutorial]({{ "pbmc-tutorial.html" | prepend: site.seurat_nav }}), we examine all three options. We strongly encourage users, regardless of their method of choosing PCs,
-to visualize and explore these dimensions in their data, rather than blindly trusting the output of a statistical test or scree plot. Seurat
-provides a number of functions (PCHeatmap, VizPCA, PrintPCA) to assist in this.
+to visualize and explore these dimensions in their data, rather than trusting the output of a statistical test or scree plot. 
 
 ### 3. How do I select my set of variable genes?
-* Seurat provides the function *MeanVarPlot()* to help in variable gene selection. This function displays dispersion (a measure of to cell-to-cell variation) as a function of average expression for each gene. Our goal is to identify a set of high-variance genes, and we recommend setting the cutoff parameters in this function by visually evaluating this plot to define outliers. However, particularly when using UMI data, we often obtain similar results including much larger gene sets, including the entire transcriptome.
+* *MeanVarPlot()* plots dispersion (a normalized measure of to cell-to-cell variation) as a function of average expression for each gene. Our goal is to identify a set of high-variance genes, and we recommend setting the cutoff parameters in this function by visually evaluating this plot to define outliers. However, particularly when using UMI data, we often obtain similar results including much larger gene sets, including the entire transcriptome.
 
 ### 4. Any new features coming soon?
-* New statistical methods for data normalization, variable gene selction, and differential expression based on a stastical framework
+* New methods for data normalization, variable gene selction, and differential expression based on a stastical framework
 for UMI count data.
 * Tutorials for much larger datasets, stay tuned
