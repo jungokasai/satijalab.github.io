@@ -19,7 +19,7 @@ Seurat also features two recently developed computational methods for single cel
 
 All methods emphasize clear, attractive, and interpretable visualizations, and were designed to be [easily used]({{"get_started.html" | prepend: site.seurat_nav}}) by both dry-lab and wet-lab researchers.
 
-Seurat is developed and maintained by the Satija lab, in particular by [Andrew Butler](mailto:abutler@nygenome.org), [Christoph Hafemeister](mailto:chafemeister@nygenome.org), and [Shiwei Zheng](mailto:szheng@nygenome.org), and is released under the GNU Public License (GPL 3.0). We are also grateful for significant ideas and code from [Jeff Farrell](mailto:jfarrell@g.harvard.edu), [Karthik Shekhar](mailto:karthik@broadinstitute.org), and [other generous contributors]({{ "contact.html" | prepend: site.seurat_nav }}), and is released under the GNU Public License (GPL 3.0).
+Seurat is developed and maintained by the Satija lab, in particular by [Andrew Butler](mailto:abutler@nygenome.org), [Christoph Hafemeister](mailto:chafemeister@nygenome.org), and [Shiwei Zheng](mailto:szheng@nygenome.org), and is released under the GNU Public License (GPL 3.0). We are also grateful for significant ideas and code from [Jeff Farrell](mailto:jfarrell@g.harvard.edu), [Karthik Shekhar](mailto:karthik@broadinstitute.org), and [other generous contributors]({{ "contact.html" | prepend: site.seurat_nav }}).
 
 
 ## News
