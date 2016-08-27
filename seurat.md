@@ -6,7 +6,7 @@ permalink: /seurat/
 
 # About Seurat
 
- Seurat is an R package designed for QC, analysis, and exploration of single cell RNA-seq data. It contains robust and scalable implementations of easy-to-use implementations of commonly used analytical techniques, including the identification of highly variable genes, dimensionality reduction (PCA, ICA, t-SNE), standard unsupervised clustering algorithms (density clustering, hierarchical clustering, k-means), and the discovery of differentially expressed genes and markers.
+Seurat is an R package designed for QC, analysis, and exploration of single cell RNA-seq data. It easily enables widely-used analytical techniques, including the identification of highly variable genes, dimensionality reduction (PCA, ICA, t-SNE), standard unsupervised clustering algorithms (density clustering, hierarchical clustering, k-means), and the discovery of differentially expressed genes and markers.
 
 Seurat also features two recently developed computational methods for single cell analysis:
 
