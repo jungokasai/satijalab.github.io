@@ -4,6 +4,13 @@
   email: rsatija@nygenome.org
   photo: rahul_satija.jpg
 
+- name: Lana Harshman
+  position: Lab Manager
+  degree: "BS, Biology"
+  university: University of Washington
+  email: lharshman@nygenome.org
+  photo: lana_harshman.JPG
+  
 - name: Christoph Hafemeister
   position: Postdoctoral Fellow
   degree: "PhD, Biology"
@@ -13,7 +20,7 @@
 
 - name: Christian Mayer
   position: Postdoctoral Fellow
-  addinfo1: "Joint postdoc with Gord Fishell, NYUMC"
+  addinfo1: "Joint w/Gord Fishell, NYUMC"
   degree: "PhD, Neuroscience"
   university: "University of Hamburg, Germany"
   addinfo2: "Diplom, University of Konstanz, Germany"
@@ -22,7 +29,7 @@
 
 - name: Lin Wu
   position: Postdoctoral Fellow
-  addinfo1: "Joint postdoc with Dan Littman, NYUMC"
+  addinfo1: "Joint w/Dan Littman, NYUMC"
   degree: PhD
   university: Hong Kong University of Science and Technology
   email: lwu@nygenome.org
@@ -55,3 +62,4 @@
   university: UC Davis
   email: sniu@nygenome.org
   photo: steve_niu.png
+
