@@ -22,7 +22,7 @@ navpages:
   - name: Publications
     link: /publications/
   - name: Seurat
-    link: /seurat.html
+    link: /seurat/
   - name: Join/Contact
     link: /join_contact/
 
