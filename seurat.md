@@ -15,7 +15,7 @@ Seurat also features two recently developed computational methods for single cel
 	* [Tutorial: Unsupervised identification of immune cell types and biomarkers from 2,700 PMBCs (10X Chromium)]({{"get_started.html" | prepend: site.seurat_nav}})
 2. Spatial reconstruction of single cell data [(Satija\*, Farrell\* et al., Nature Biotechnology, 2015)](http://www.nature.com/nbt/journal/vaop/ncurrent/full/nbt.3192.html)
 	* Infers the original location of a single cell based on its gene expression, and a spatial reference map
-	* [Tutorial: Inferring spatial localization of single cells during Zebrafish embryogenesis]({{"old-get-started.html" | prepend: site.seurat_nav}})
+	* [Tutorial: Inferring spatial localization of single cells during Zebrafish embryogenesis]({{"old-get-started/" | prepend: site.seurat_nav}})
 
 All methods emphasize clear, attractive, and interpretable visualizations, and were designed to be [easily used]({{"get_started.html" | prepend: site.seurat_nav}}) by both dry-lab and wet-lab researchers.
 
