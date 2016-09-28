@@ -10,7 +10,7 @@
   university: University of Washington
   email: lharshman@nygenome.org
   photo: lana_harshman.JPG
-  
+
 - name: Christoph Hafemeister
   position: Postdoctoral Fellow
   degree: "PhD, Biology"
@@ -34,6 +34,14 @@
   university: Hong Kong University of Science and Technology
   email: lwu@nygenome.org
   photo: lin_wu.jpg
+
+- name: Jan Slabbaert
+  position: Postdoctoral Fellow
+  degree: "PhD, Biomedical Sciences"
+  university: "KU Leuven - University of Leuven, Belgium"
+  addinfo2: Flemish Institute for Biotechnology (VIB)
+  email: jslabbaert@nygenome.org
+  photo: jan_slabbaert.png
 
 - name: Shiwei Zheng,
   position: Graduate Student
