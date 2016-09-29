@@ -7,15 +7,15 @@ output:
 ***
 
 ### Setup the Seurat Object
-For this tutorial, we will be analyzing the a dataset of Peripheral Blood Mononuclear Cells (PBMC) freely available from 10X Genomics. There are 2,700 single cells that were sequenced on the Illumina NextSeq 500. The raw data can be found [here](https://s3-us-west-2.amazonaws.com/10x.files/samples/cell/pbmc3k/pbmc3k_filtered_gene_bc_matrices.tar.gz). 
+For this tutorial, we will be analyzing the a dataset of Peripheral Blood Mononuclear Cells (PBMC) freely available from 10X Genomics. There are 2,700 single cells that were sequenced on the Illumina NextSeq 500. The raw data can be found [here](https://s3-us-west-2.amazonaws.com/10x.files/samples/cell/pbmc3k/pbmc3k_filtered_gene_bc_matrices.tar.gz).
 
 We start by reading in the data. All features in Seurat have been configured to work with both regular and sparse matrices, but sparse matrices result in significant memory and speed savings for Drop-seq/inDrop/10x data.
-```{r init, cache=TRUE, message=FALSE} 
+```{r init, cache=TRUE, message=FALSE}
 library(Seurat)
 library(dplyr)
 library(Matrix)
 
-# Load the PBMC dataset 
+# Load the PBMC dataset
 pbmc.data <- Read10X("~/Downloads/filtered_gene_bc_matrices/hg19/")
 
 #Examine the memory savings between regular and sparse matrices
@@ -38,7 +38,7 @@ pbmc <- Setup(pbmc, min.cells = 3, min.genes = 200, do.logNormalize = T, total.e
 
 ***
 ### Basic QC and selecting cells for further analysis
-While the setup function imposes a basic minimum gene-cutoff, you may want to filter out cells at this stage based on technical or biological parameters. Seurat allows you to easily explore QC metrics and filter cells based on any user-defined criteria. In the example below,  we visualize gene and molecule counts, plot their relationship, and exclude cells with a clear outlier number of genes detected as potential multiplets. Of course this is not a guarenteed method to exclude cell doublets, but we include this as an example of filtering user-defined outlier cells. We also filter cells based on the percentage of mitochondrial genes present. 
+While the setup function imposes a basic minimum gene-cutoff, you may want to filter out cells at this stage based on technical or biological parameters. Seurat allows you to easily explore QC metrics and filter cells based on any user-defined criteria. In the example below,  we visualize gene and molecule counts, plot their relationship, and exclude cells with a clear outlier number of genes detected as potential multiplets. Of course this is not a guarenteed method to exclude cell doublets, but we include this as an example of filtering user-defined outlier cells. We also filter cells based on the percentage of mitochondrial genes present.
 
 ```{r qc, cache=TRUE, results= 'hide', fig.height=7,fig.width=13}
 #nGene and nUMI are automatically calculated for every object by Seurat. For non-UMI data, nUMI represents the sum of the non-normalized values within a cell
@@ -120,17 +120,17 @@ PCHeatmap(pbmc, pc.use = 1:12, cells.use = 500, do.balanced = TRUE, label.column
 
 ***
 ###Determine statistically significant principal components
-To overcome the extensive technical noise in any single gene for scRNA-seq data, Seurat clusters cells based on their PCA scores, with each PC essentially representing a 'metagene' that combines information across a correlated gene set. Determining how many PCs to include downstream is therefore an important step. 
+To overcome the extensive technical noise in any single gene for scRNA-seq data, Seurat clusters cells based on their PCA scores, with each PC essentially representing a 'metagene' that combines information across a correlated gene set. Determining how many PCs to include downstream is therefore an important step.
 
-In Macosko et al, we implemented a resampling test inspired by the jackStraw procedure. We randomly permute a subset of the data (1% by default) and rerun PCA, constructing a 'null distribution' of gene scores, and repeat this procedure. We identify 'significant' PCs as those who have a strong enrichment of low p-value genes. 
+In Macosko et al, we implemented a resampling test inspired by the jackStraw procedure. We randomly permute a subset of the data (1% by default) and rerun PCA, constructing a 'null distribution' of gene scores, and repeat this procedure. We identify 'significant' PCs as those who have a strong enrichment of low p-value genes.
 
 ```{r jackstraw,fig.height=6,fig.width=10,cache=TRUE,warning=FALSE}
 # NOTE: This process can take a long time for big datasets, comment out for expediency.
 # More approximate techniques such as those implemented in PCElbowPlot() can be used to reduce computation time
-pbmc <- JackStraw(pbmc, num.replicate = 100, do.print = FALSE) 
+pbmc <- JackStraw(pbmc, num.replicate = 100, do.print = FALSE)
 ```
 
-The **JackStrawPlot()** function provides a visualization tool for comparing the distribution of p-values for each PC with a uniform distribution (dashed line). 'Significant' PCs will show a strong enrichment of genes with low p-values (solid curve above the dashed line). In this case it appears that PCs 1-10 are significant. 
+The **JackStrawPlot()** function provides a visualization tool for comparing the distribution of p-values for each PC with a uniform distribution (dashed line). 'Significant' PCs will show a strong enrichment of genes with low p-values (solid curve above the dashed line). In this case it appears that PCs 1-10 are significant.
 
 ```{r jsplots,fig.height=6,fig.width=10,cache=TRUE,warning=FALSE}
 JackStrawPlot(pbmc, PCs = 1:12)
@@ -149,7 +149,7 @@ PC selection -- identifying the true dimensionality of a dataset -- is an import
 
 Seurat now includes an graph-based clustering approach compared to (Macosko et al.). Importantly, the *distance metric* which drives the clustering analysis remains the same (based on previously identified PCs) remains the same. However, our approach to partioning the cellular distance matrix into clusters has dramatically improved. Our approach was heavily inspired by recent manuscripts which applied graph-based clustering approaches to scRNA-seq data [[SNN-Cliq, Xu and Su, Bioinformatics, 2015]](http://bioinformatics.oxfordjournals.org/content/early/2015/02/10/bioinformatics.btv088.abstract) and CyTOF data [[PhenoGraph, Levine et al., Cell, 2015]](http://www.ncbi.nlm.nih.gov/pubmed/26095251). Briefly, these methods embed cells in a graph structure - for example a K-nearest neighbor (KNN) graph, with edges drawn between cells with similar gene expression patterns, and then attempt to partition this graph into highly interconnected 'quasi-cliques' or 'communities'. As in PhenoGraph, we first construct a KNN graph based on the euclidean distance in PCA space, and refine the edge weights between any two cells based on the shared overlap in their local neighborhoods (Jaccard distance). To cluster the cells, we apply the smart local moving algorithm [[SLM, Blondel et al., Journal of Statistical Mechanics]](http://dx.doi.org/10.1088/1742-5468/2008/10/P10008), to iteratively group cell groupings together with the goal of optimizing the standard modularity function.
 
-The **FindClusters()** function implements the procedure, and contains a resolution parameter that sets the 'granularity' of the downstream clustering, with increased values leading to a greater number of clusters. We find that setting this parameter between 0.6-1.2 typically returns good results for single cell datasets. The clusters are saved in the object\@ident slot.
+The **FindClusters()** function implements the procedure, and contains a resolution parameter that sets the 'granularity' of the downstream clustering, with increased values leading to a greater number of clusters. We find that setting this parameter between 0.6-1.2 typically returns good results for single cell datasets of around 3K cells. Optimal resolution often increases for larger datasets. The clusters are saved in the object\@ident slot.
 
 
 ```{r cluster,fig.height=5,fig.width=7,cache=TRUE}
@@ -180,7 +180,7 @@ save(pbmc, file = "~/Projects/datasets/pbmc3k/pbmc_tutorial.Robj")
 ###Finding differentially expressed genes (cluster biomarkers)
 Seurat can help you find markers that define clusters via differential expression. By default, it identifes positive and negative markers of a single cluster (specified in ident.1), compared to all other cells.  **FindAllMarkers()** automates this process for all clusters, but you can also test groups of clusters vs. each other, or against all cells.
 
-The min.pct argument requires a gene to be detected at a minimum percentage in either of the two groups of cells, and the thresh.test argument requires a gene to be differentially expressed (on average) by some amount between the two groups. You can set both of these to 0, but with a dramatic increase in time - since this will test a large number of genes that are unlikely to be highly discriminatory. As another option to speed up these computations, max.cells.per.ident can be set. This will downsample each identity class to have no more cells than whatever this is set to. While there is generally going to be a loss in power, the speed increases can be signficiant and the most highly differentially expressed genes will likely still rise to the top. 
+The min.pct argument requires a gene to be detected at a minimum percentage in either of the two groups of cells, and the thresh.test argument requires a gene to be differentially expressed (on average) by some amount between the two groups. You can set both of these to 0, but with a dramatic increase in time - since this will test a large number of genes that are unlikely to be highly discriminatory. As another option to speed up these computations, max.cells.per.ident can be set. This will downsample each identity class to have no more cells than whatever this is set to. While there is generally going to be a loss in power, the speed increases can be signficiant and the most highly differentially expressed genes will likely still rise to the top.
 
 
 ```{r markers1,fig.height=8,fig.width=15,cache=TRUE, warning=FALSE}
@@ -195,24 +195,24 @@ pbmc.markers <- FindAllMarkers(pbmc, only.pos = TRUE, min.pct = 0.25, thresh.use
 pbmc.markers %>% group_by(cluster) %>% top_n(2, avg_diff)
 ```
 
-Seurat has four tests for differential expression which can be set with the test.use parameter: ROC test ("roc"), t-test ("t"), LRT test based on zero-inflated data ("bimod", default), LRT test based on tobit-censoring models ("tobit") The ROC test returns the 'classification power' for any individual marker (ranging from 0 - random, to 1 - perfect). 
+Seurat has four tests for differential expression which can be set with the test.use parameter: ROC test ("roc"), t-test ("t"), LRT test based on zero-inflated data ("bimod", default), LRT test based on tobit-censoring models ("tobit") The ROC test returns the 'classification power' for any individual marker (ranging from 0 - random, to 1 - perfect).
 
 ```{r markersroc,fig.height=8,fig.width=15,cache=TRUE}
 cluster1.markers <- FindMarkers(pbmc, ident.1 = 0, thresh.use = 0.25, test.use = "roc",only.pos = T)
 ```
 
-There are several tools for visualizing marker expression. **VlnPlot()** generates a violin plot which shows the probability density at different expression levels of the gene for each cluster. As seen below, good marker genes will show strongly in a single cluster. It can also be useful to look at gene/gene correlation with **GenePlot()** which returns a plot similar to a 'FACS' plot with cells colored by cluster identity. Also, the **FeaturePlot()** function is useful for viewing the expression of the gene in the context of all the cells and helps validate the specificity of the marker or the quality of the clustering. 
+There are several tools for visualizing marker expression. **VlnPlot()** generates a violin plot which shows the probability density at different expression levels of the gene for each cluster. As seen below, good marker genes will show strongly in a single cluster. It can also be useful to look at gene/gene correlation with **GenePlot()** which returns a plot similar to a 'FACS' plot with cells colored by cluster identity. Also, the **FeaturePlot()** function is useful for viewing the expression of the gene in the context of all the cells and helps validate the specificity of the marker or the quality of the clustering.
 
 ```{r markerplots,fig.height=8,fig.width=15,cache=TRUE}
-VlnPlot(pbmc, c("MS4A1","CD79A")) 
+VlnPlot(pbmc, c("MS4A1","CD79A"))
 
 #you can plot raw UMI counts as well
-VlnPlot(pbmc, c("NKG7","PF4"),use.raw = T,y.log = T) 
+VlnPlot(pbmc, c("NKG7","PF4"),use.raw = T,y.log = T)
 
 FeaturePlot(pbmc, c("MS4A1", "GNLY","CD3E","CD14","FCER1A","FCGR3A", "LYZ", "PPBP", "CD8A"),cols.use = c("grey","blue"))
 ```
 
-Heatmaps can also be a good way to examine heterogeneity within/between clusters. The **DoHeatmap()** function will generate a heatmap for given cells and genes. In this case, we are plotting the top 20 markers (or all markers if less than 20) for each cluster. 
+Heatmaps can also be a good way to examine heterogeneity within/between clusters. The **DoHeatmap()** function will generate a heatmap for given cells and genes. In this case, we are plotting the top 20 markers (or all markers if less than 20) for each cluster.
 
 ```{r clusterHeatmap, fig.height=8,fig.width=15,cache=TRUE, message=FALSE, warning=FALSE}
 pbmc.markers %>% group_by(cluster) %>% top_n(10, avg_diff) -> top10
@@ -226,7 +226,7 @@ Fortunately in the case of this dataset, we can use canonical markers to easily 
 
 Cluster ID | Markers       | Cell Type
 -----------|---------------|----------
-0          | IL7R          | CD4 T cells 
+0          | IL7R          | CD4 T cells
 1          | CD14, LYZ     | CD14+ Monocytes
 2          | MS4A1         | B cells
 3          | CD8A          | CD8 T cells
