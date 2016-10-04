@@ -19,15 +19,18 @@ If you have installed a previous version of Seurat, it is recommended that you r
 
 ## Instructions for Mac
 
-### Install From Release Binaries 
+### Install From Release Binaries
 
 
 Install Seurat - directly from [Github](https://github.com/{{ site.github_username }}/seurat).
 
 ```r
-install_url("https://github.com/satijalab/seurat/releases/download/v1.4.0/Seurat_1.4.0.tgz", binary =T)
+install_url("https://github.com/satijalab/seurat/releases/download/v1.4.0/Seurat_1.4.0.tgz", binary = TRUE)
 library(Seurat)
 ```
+
+You will need to be running the latest version (R 3.3.1) for this to work properly. You can find that [here](https://cloud.r-project.org/bin/macosx). If you want to use a different version of R, you will need to install from source.
+
 
 ### Install From Source
 
@@ -45,7 +48,7 @@ This may cause errors on some standard Mac installs due to R being compiled usin
 ld: library not found for -lgfortran
 ```
 
-To fix this, refer to the following [blog post](http://thecoatlessprofessor.com/programming/rcpp-rcpparmadillo-and-os-x-mavericks-lgfortran-and-lquadmath-error/). NOTE: you will need sudo permission.
+To fix this, refer to the following [blog post](http://thecoatlessprofessor.com/programming/rcpp-rcpparmadillo-and-os-x-mavericks-lgfortran-and-lquadmath-error/). NOTE: you will need sudo permissions.
 
 <br>
 
@@ -61,7 +64,7 @@ To fix this, refer to the following [blog post](http://thecoatlessprofessor.com/
    ```
 4. Install [Rtools](http://cran.r-project.org/bin/windows/Rtools/)
 5. Install development version of devtools.  There have been some issues with the latest CRAN version of devtools and the latest R release on Windows that cause issues when trying to install all the package dependencies. The latest devtools version on github has addressed this issue
-   
+
 
    ```R
    install_github("hadley/devtools")
