@@ -29,8 +29,8 @@ Seurat is developed and maintained by the Satija lab, in particular by [Andrew B
 ## News
 **October 4, 2016:** Version 1.4 released
 
-* Improved tools for cluster evaluation/visualizations
-* Methods for combining and adding to datasets
+* Added methods for negative binomial regression and differential expression testing for UMI count data
+* New ways to merge and downsample Seurat objects
 
 **August 22, 2016:** Version 1.3 released
 
