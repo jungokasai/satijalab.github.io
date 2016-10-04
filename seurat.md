@@ -14,7 +14,7 @@ Seurat also features two recently developed computational methods for single cel
 	* Updated approach: Combining dimensional reduction with graph-based clustering
 	* [Tutorial: Unsupervised identification of immune cell types and biomarkers from 2,700 PMBCs (10X Chromium)]({{"get_started.html" | prepend: site.seurat_nav}})
 	* [Command List](LINK): Unsupervised identification of immune cell types from [33,000 PBMCs (10X Chromium)](OBJECT LINK)
-	* [Command List](LINK): Unsupervised identification of pancreas cell types from [8,500 single cells](OBJECT LINK)
+	* [Command List](LINK): Unsupervised identification of pancreas cell types from [8,500 single cells (inDrop)](OBJECT LINK) [(Baron et. al., Cell Systems, 2016)](http://www.cell.com/cell-systems/abstract/S2405-4712(16)30266-6)
 2. Spatial reconstruction of single cell data [(Satija\*, Farrell\* et al., Nature Biotechnology, 2015)](http://www.nature.com/nbt/journal/vaop/ncurrent/full/nbt.3192.html)
 	* Infers the original location of a single cell based on its gene expression, and a spatial reference map
 	* [Tutorial: Inferring spatial localization of single cells during Zebrafish embryogenesis]({{"old-get-started/" | prepend: site.seurat_nav}})
