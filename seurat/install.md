@@ -52,7 +52,7 @@ To fix this, refer to the following [blog post](http://thecoatlessprofessor.com/
 
 <br>
 
-# Installation on Windows
+## Installation on Windows
 1. Install [R](https://www.r-project.org/) (v >= 3.2)
 2. Recommended : Install [R Studio](https://www.rstudio.com/)
 3. Install the “devtools” package from Hadley Wickham
