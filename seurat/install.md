@@ -4,7 +4,7 @@ title: Install
 ---
 
 # Installation Instructions for Seurat
-If you have installed a previous version of Seurat, it is recommended that you restart your R session before loading the new version.
+If you have installed a previous version of Seurat, it is recommended that you restart your R session before loading the new version. First install R and the devtools package.
 
 1. Install [R](https://www.r-project.org/) (v >= 3.2)
 2. Recommended : Install [R Studio](https://www.rstudio.com/)
@@ -15,14 +15,37 @@ If you have installed a previous version of Seurat, it is recommended that you r
    install.packages("devtools")
    library(devtools)
    ```
-4. Install Seurat - directly from [Github](https://github.com/{{ site.github_username }}/seurat).
 
 
-   ```r
-   install_github("satijalab/seurat")
-   library(Seurat)
-   ```
+## Instructions for Mac
 
+### Install From Release Binaries 
+
+
+Install Seurat - directly from [Github](https://github.com/{{ site.github_username }}/seurat).
+
+```r
+install_url("https://github.com/satijalab/seurat/releases/download/v1.4.0/Seurat_1.4.0.tgz", binary =T)
+library(Seurat)
+```
+
+### Install From Source
+
+Install Seurat - directly from [Github](https://github.com/{{ site.github_username }}/seurat).
+
+```r
+install_github("satijalab/seurat")
+library(Seurat)
+```
+
+This may cause errors on some standard Mac installs due to R being compiled using gfortran-4.8. They will look something like
+
+```r
+-L/usr/local/lib/gcc/x86_64-apple-darwin13.0.0/4.8.2'
+ld: library not found for -lgfortran
+```
+
+To fix this, refer to the following [blog post](http://thecoatlessprofessor.com/programming/rcpp-rcpparmadillo-and-os-x-mavericks-lgfortran-and-lquadmath-error/). NOTE: you will need sudo permission.
 
 <br>
 
