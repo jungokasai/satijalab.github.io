@@ -90,6 +90,7 @@ Technologies used: plotly, jStat, jQuery, jQuery UI</p>
 	var p;
 	var x;
 	var nextX;
+    var stepSize;
 	var p95;
 	var p99;
 	var calcDone;
@@ -139,7 +140,8 @@ Technologies used: plotly, jStat, jQuery, jQuery UI</p>
     	maxX = 11111;
     	p = [];
 		x = [];
-        nextX = minCells * numTypes;
+        nextX = Math.ceil(minCells * numTypes / (minFrac*numTypes));
+        stepSize = Math.ceil(numTypes * minCells / minFrac / 50000);
 		p95 = 0;
 		p99 = 0;
 		calcDone = false;
@@ -148,9 +150,9 @@ Technologies used: plotly, jStat, jQuery, jQuery UI</p>
     }
 
     function doCalc() {
-    	var stopX = nextX + 50;
+    	var stopX = nextX + 50 * stepSize;
         var thisP;
-    	for (var i = nextX; i < stopX; i++) {
+    	for (var i = nextX; i < stopX; i += stepSize) {
 			thisP = Math.pow(jStat.negbin.cdf(i, minCells, minFrac), numTypes)
 			if (thisP > 0.001) {
 			  p.push(thisP);
