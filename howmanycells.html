@@ -14,42 +14,49 @@ permalink: /howmanycells
 <body style="margin:32px;">
 
 <div>
+<p><h2>How many cells do we need to sample so that we see at least n cells of each type?</h2>
 <ul>
-<li><p>How many cells do we need to sample so that we see at least n cells of each type?
-This depends on the number of cell type present and the diversity, i.e. the entropy.
+<li>This depends on the number of cell type present and the diversity, i.e. the entropy.
 When entropy is very low, few or one cell type dominates the population and all other
-types are present at low fractions. In the default example below we assume that there are
-11 cell types. One type is present at 80% and 10 are present at 2% each. If we want to be
-95% confident that our sample contains at least 5 cells from each cell type, we need to
-sample at least 619 cells. </p></li>
+types are present at low fractions.</li>
+<li>In the default example below we assume that there are 
+10 rare cell types, each one present at a fraction of 2% of the total population. If we want to be 
+95% confident that our sample contains at least 5 cells from each of those cell types, we need to 
+sample at least 619 cells in total.</li>
+</ul></p>
 
-<li><p>The underlying assumption is that for every type the number of cells in the population
-is much larger than the minimum number of cells desired in the sample. Then, for a given type
+<p><h3>Underlying assumptions</h3>
+<ul>
+<li>We assume the worst case scenario - one cell type dominates the population</li>
+<li>For every type the number of cells in the population
+is much larger than the minimum number of cells desired in the sample</li>
+<li>For a given type
 the probability of seeing at least n cells in a sample of size k follows the cumulative
-distribution function of a negative binomial NBcdf(k; n, p). For m cell types with
+distribution function of a negative binomial NBcdf(k; n, p), with p being the relative abundance.</li>
+<li>For m cell types with
 the same parameter p the overall probability of seeing each type at least n times
 is NBcdf(k; n, p)^m. The results below should be treated as a lower bound, since in reality
-the number of cells in the population is finite and the random draws are not independent per cell type.</p></li>
+the number of cells in the population is finite and the random draws are not independent per cell type.</li>
+</ul></p>
 
-<li><p>Use the sliders or text boxes below to change parameters.</p></li>
-</ul>
+<p>Use the sliders or text boxes below to change parameters.</p>
 </div>
 
 <table>
 <tr>
 
 <td style="padding:16px;">
-Number of cell types
+Assumed number of cell types
 <div id="sliderNumTypes" style="width:200px;"></div><input type="text" id="inpNumTypes" value="10" />
 </td>
 
 <td style="padding:16px;">
-Minimum fraction
+Minimum fraction (of rarest cell type)
 <div id="sliderMinFrac" style="width:200px;"></div><input type="text" id="inpMinFrac" value="0.02" />
 </td>
 
 <td style="padding:16px;">
-Minimum number of cells that should be detected
+Minimum desired cells per type
 <div id="sliderMinCells" style="width:200px;"></div><input type="text" id="inpMinCells" value="5" />
 </td>
 
