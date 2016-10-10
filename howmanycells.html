@@ -1,0 +1,225 @@
+---
+layout: default
+title: How Many Cells
+permalink: /howmanycells
+---
+
+<head>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jstat/1.5.3/jstat.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+</head>
+<body style="margin:32px;">
+
+<div>
+<ul>
+<li><p>How many cells do we need to sample so that we see at least n cells of each type?
+This depends on the number of cell type present and the diversity, i.e. the entropy.
+When entropy is very low, few or one cell type dominates the population and all other
+types are present at low fractions. In the default example below we assume that there are
+11 cell types. One type is present at 80% and 10 are present at 2% each. If we want to be
+95% confident that our sample contains at least 5 cells from each cell type, we need to
+sample at least 619 cells. </p></li>
+
+<li><p>The underlying assumption is that for every type the number of cells in the population
+is much larger than the minimum number of cells desired in the sample. Then, for a given type
+the probability of seeing at least n cells in a sample of size k follows the cumulative
+distribution function of a negative binomial NBcdf(k; n, p). For m cell types with
+the same parameter p the overall probability of seeing each type at least n times
+is NBcdf(k; n, p)^m. The results below should be treated as a lower bound, since in reality
+the number of cells in the population is finite and the random draws are not independent per cell type.</p></li>
+
+<li><p>Use the sliders or text boxes below to change parameters.</p></li>
+</ul>
+</div>
+
+<table>
+<tr>
+
+<td style="padding:16px;">
+Number of cell types
+<div id="sliderNumTypes" style="width:200px;"></div><input type="text" id="inpNumTypes" value="10" />
+</td>
+
+<td style="padding:16px;">
+Minimum fraction
+<div id="sliderMinFrac" style="width:200px;"></div><input type="text" id="inpMinFrac" value="0.02" />
+</td>
+
+<td style="padding:16px;">
+Minimum number of cells that should be detected
+<div id="sliderMinCells" style="width:200px;"></div><input type="text" id="inpMinCells" value="5" />
+</td>
+
+</tr>
+</table>
+
+
+
+<div style="width:800px;height:500px;">
+  <div id="plot" style="width:800px;height:500px;position:absolute;"></div>
+  <div id="pholder" style="width:800px;height:500px;position:absolute;display:flex;flex-direction:column;">
+    <div style="margin:0 auto;">Calculating results</div>
+    <div style="margin:0 auto;"><img src="http://i.giphy.com/905GG7MjDw61q.gif"></img></div>
+    <div id="progr" style="margin:0 auto;"></div>
+    <div id="progr" style="margin:0 auto;"><button id="stopButton" style="margin:0 auto;">Click to stop</button></div>
+  </div>
+  <div id="prob" style="width:800px;height:500px;position:absolute;display:flex;flex-direction:column;">
+    <div style="margin:0 auto;">There was a problem with your input.</div>
+    <div style="margin:0 auto;"><img src="http://i.giphy.com/utHSZRBCTGDKw.gif"></img></div>
+  </div>
+  <div id="upBu" style="width:800px;height:500px;position:absolute;display:flex;flex-direction:column;">
+    <button id="updateButton" style="margin:0 auto;">Update results</button>
+  </div>
+</div>
+
+<div><small>
+<p>This website was created by Christoph Hafemeister in Rahul Satija's lab at the New York Genome Center.
+Technologies used: plotly, jStat, jQuery, jQuery UI</p>
+<p>For questions or comments email <a href = "mailto:chafemeister@nygenome.org"> chafemeister@nygenome.org</a></p>
+</small></div>
+
+<script>
+
+    var numTypes;
+    var minFrac;
+    var minCells;
+	var maxX;
+	var p;
+	var x;
+	var nextX;
+	var p95;
+	var p99;
+	var calcDone;
+	var calcInterval;
+
+	$("#pholder").hide(0);
+    $("#prob").hide(0);
+    $("#upBu").hide(0);
+
+    function showPlot() {
+    	var layout = {
+		  title: 'Probability of seeing at least ' + minCells + ' cells from each cluster',
+		  xaxis: {
+		    title: 'Number of cells sampled'
+		  },
+		  annotations: [],
+		};
+		if (p95) layout.annotations.push({x: p95[0],
+						                  y: p95[1],
+						                  xanchor: 'right',
+						                  yanchor: 'middle',
+						                  text: '0.95 reached at ' + p95[0],
+						                  showarrow: true});
+		if (p99) layout.annotations.push({x: p99[0],
+						                  y: p99[1],
+						                  xanchor: 'right',
+						                  yanchor: 'middle',
+						                  text: '0.99 reached at ' + p99[0],
+						                  showarrow: true});
+
+		Plotly.purge(document.getElementById('plot'));
+		var TESTER = document.getElementById('plot');
+		Plotly.plot( TESTER, [{
+		x: x,
+		y: p }],
+		layout,
+		{displayModeBar: false} );
+
+    	$("#pholder").hide(0);
+    	$("#plot").fadeTo(0, 1);
+    }
+
+    function initCalc() {
+    	numTypes = parseInt(document.getElementById("inpNumTypes").value);
+    	minFrac = parseFloat(document.getElementById("inpMinFrac").value);
+    	minCells = parseInt(document.getElementById("inpMinCells").value);
+    	maxX = 11111;
+    	p = [];
+		x = [];
+        nextX = minCells * numTypes;
+		p95 = 0;
+		p99 = 0;
+		calcDone = false;
+		if (isNaN(numTypes) || isNaN(minFrac) || isNaN(minCells)) return(false);
+		return(true);
+    }
+
+    function doCalc() {
+    	var stopX = nextX + 50;
+        var thisP;
+    	for (var i = nextX; i < stopX; i++) {
+			thisP = Math.pow(jStat.negbin.cdf(i, minCells, minFrac), numTypes)
+			if (thisP > 0.001) {
+			  p.push(thisP);
+			  x.push(i);
+			}
+			if (p95 == 0 && thisP >= 0.95) p95 = [i, thisP];
+			if (p99 == 0 && thisP >= 0.99) p99 = [i, thisP];
+		}
+        $("#progr").text("Progress: k is " + (stopX-1) + " and probability is " + thisP.toFixed(4));
+		nextX = stopX;
+		if (p.length >= maxX || p[p.length-1] >= 0.999) calcDone = true;
+    }
+
+    function updatePlot() {
+    	$("#plot").fadeTo(0, 0.2);
+    	$("#pholder").hide(0);
+    	$("#progr").text("Progress:");
+    	$("#prob").hide(0);
+    	$("#upBu").hide(0);
+    	var goodToGo = initCalc();
+    	if (!goodToGo) {
+   			$("#prob").show(0);
+   			return(false);
+    	}
+    	$("#pholder").show(0);
+    	$("body").css("cursor", "wait");
+    	calcInterval = setInterval(function() {
+    		if (!calcDone) doCalc();
+    		else {
+    			clearInterval(calcInterval);
+    			showPlot();
+    			$("body").css("cursor", "default");
+    		}
+    	}, 0);
+    }
+
+	$("#sliderMinCells").slider({
+    	value: parseInt(document.getElementById("inpMinCells").value),
+    	min: 1,
+    	max: 33,
+    	step: 1,
+    	slide: function(event, ui) {$("#inpMinCells").val(ui.value);},
+    	stop: function(event, ui) {updatePlot();},
+	});
+
+	$("#sliderNumTypes").slider({
+    	value: parseInt(document.getElementById("inpNumTypes").value),
+    	min: 1,
+    	max: 55,
+    	step: 1,
+    	slide: function(event, ui) {$("#inpNumTypes").val(ui.value);},
+    	stop: function(event, ui) {updatePlot();},
+	});
+
+	$("#sliderMinFrac").slider({
+    	value: parseFloat(document.getElementById("inpMinFrac").value),
+    	min: 0.01,
+    	max: 0.1,
+    	step: 0.01,
+    	slide: function(event, ui) {$("#inpMinFrac").val(ui.value);},
+    	stop: function(event, ui) {updatePlot();},
+	});
+
+	$("#updateButton").button().click(updatePlot);
+	$("#stopButton").button().click(function() {calcDone = true;});
+	$("input").keyup(function() {$("#plot").fadeTo(0, 0.2); $("#prob").hide(0); $("#upBu").show(0);});
+
+	updatePlot();
+</script>
+
+
+</body>
