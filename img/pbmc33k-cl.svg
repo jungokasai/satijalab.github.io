@@ -16,7 +16,10 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="pbmc33k-cl.svg">
+   sodipodi:docname="pbmc33k-cl.svg"
+   inkscape:export-filename="/Users/abutler/Projects/satijalab.github.io/img/pbmc33k-cl.png"
+   inkscape:export-xdpi="100"
+   inkscape:export-ydpi="100">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -27,7 +30,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.59"
-     inkscape:cx="804.64896"
+     inkscape:cx="530.92015"
      inkscape:cy="640.98417"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -36,11 +39,11 @@
      fit-margin-left="0"
      fit-margin-right="0"
      fit-margin-bottom="0"
-     inkscape:window-width="1855"
-     inkscape:window-height="1056"
-     inkscape:window-x="65"
-     inkscape:window-y="24"
-     inkscape:window-maximized="1" />
+     inkscape:window-width="1280"
+     inkscape:window-height="751"
+     inkscape:window-x="1702"
+     inkscape:window-y="155"
+     inkscape:window-maximized="0" />
   <metadata
      id="metadata7">
     <rdf:RDF>

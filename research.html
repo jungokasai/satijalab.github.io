@@ -3,45 +3,44 @@ layout: default
 title: Research
 permalink: /research/
 ---
-<div class = "wrapper">
-    <div class = "research-page">
-        <p>
-            We study the <b>causes and consequences of cellular heterogeneity </b> in complex biological systems, ranging from developing embryos and differentiated organs to malignant tumors. Their behavior represents the combined output of diverse, and interacting cells, motivating the need for molecular profiling at the single cell level.
-            <br><br>
+<div class = "research-page">
 
-            Much of our work focuses on single cell genomics, where we are actively developing new methods for both the wet and dry lab. On the experimental front, we leverage advances in molecular biology, high-throughput robotics, and microfluidics to sensitively profile large numbers of single cells. In parallel, we focus on <b><a href="/seurat/">developing statistical and machine learning-based approaches</a></b> to process, visualize, and interpret these unique datasets.
-            <br><br>
-
-            We have a particular interest in immune regulation and developmental processes, and work closely with partner labs both within and outside of New York City. We are actively seeking new collaborations, and are always excited to discuss ideas, projects, and pilot experiments - please do not hesitate to <u><a href="/join_contact/">get in touch</a></u>.
-            <br><br>
-        </p>
-
-    <div class ="slideshow">
-            <div class="bss-slides">
-                {% for slide in site.data.slideshow %}
-                <figure>
-                        <img src="{{slide.figure | prepend: site.slideshow_photos}} " width=100%>
-                        <figcaption>{{ slide.caption }} </figcaption>
-                </figure>
-                {% endfor %}
-            </div>
+<div class = 'row'>
+    <div class="col-sm-3 col-xs-6 ">
+        <img class = "img-fix" src="{{"/img/network.png" | prepend: site.imgurl }}" />
     </div>
+    <div class="col-sm-3 col-xs-6 ">
+        <img class = "img-fix" src="{{"/img/spatial_localization.jpg" | prepend: site.imgurl }}"  />
     </div>
+    <div class="clearfix visible-xs"></div>
+    <div class="col-sm-3 col-xs-6">
+        <img class = "img-fix" src="{{"/img/count-vs-umi.png" | prepend: site.imgurl }}" >
+    </div>
+    <div class="col-sm-3 col-xs-6">
+        <img class = "img-fix" src="{{"/img/tsne-example.png" | prepend: site.imgurl }}" />
+    </div>
+</div>
+
+  <br>
+
+<h3> Statistical methods for single cell genomics </h3>
+<p>
+        Recent advances in molecular biology and microfluidics have enabled us to individually sequence the molecular contents of thousands of single cells. These datasets promise to transform our understanding of cellular diversity, but they are incomplete. Firstly, they contain information for only a small fraction of molecules in a cell - necessitating new methods capable of handling extensive technical noise. Secondly, they contain only molecular information about the cell, and lack crucial metadata about a cell’s environment, lineage, and interactions, that are essential towards understanding and predicting its behavior.
+</p>
+<p>
+        To address these challenges, we are applying powerful tools in statistical inference and machine-learning to single cell data. We are particularly interested in building methods that can integrate information across multiple data types, modalities, and experimental conditions. We hope that these tools will be valuable not only across multiple projects in the lab (see below), but also to the broader community.
+</p>
+
+  <h3> Integrated analysis of cellular decision-making </h3>
+  <p>
+        Cellular diversity increases dramatically during differentiation, as a single progenitor can give rise to a breathtaking diversity of cell types. How do progenitor cells choose their terminal fates? Through single cell analysis, we are exploring the intrinsic and extrinsic factors which drive cellular decision-making. Single cell RNA-seq enables powerful approaches to reconstruct developmental trajectories, but we are also building an integrated framework to understand how a cell’s spatial localization, epigenomic landscape, and parental lineage influence its behavior and fate. Through projects driven both within the lab, and collaboratively across NYC, we focus on the development of the early mammalian immune and nervous systems.
+  </p>
+
+  <h3> Deconvolution of autoimmune disease </h3>
+  <p>
+        The immune system strikes a delicate balance between immunity and tolerance, enabled by diverse subsets of interdependent and intercommunicating cells. Abnormal immune responses lead to autoimmune disease, and this extensive cellular heterogeneity can obscure the subpopulations and molecular pathways that drive disease progression and treatment. Working with the Hospital for Special Surgery and NYU, we’ve established a pipeline for high-throughput single cell analysis of clinical samples from patients with autoimmune disease, and are leveraging these rich datasets to better understand disease etiology and pathogenesis, with the goal of identifying new biomarkers and therapeutic avenue. More generally, we hope to build new experimental and computational tools that will advance and democratize clinical applications for single cell genomics.
+  </p>
 
 
-    <script src="/assets/js/hammer.min.js"></script><!-- for swipe support on touch interfaces -->
-    <script src="/assets/js/better-simple-slideshow.min.js"></script>
-
-    <script>
-    var opts = {
-        auto : {
-            speed : 4500,
-            pauseOnHover : true
-        },
-        fullScreen : false,
-        swipe : true
-    };
-    makeBSS('.bss-slides', opts);
-    </script>
 </div>
 

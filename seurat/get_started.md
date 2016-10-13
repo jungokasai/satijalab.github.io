@@ -17,12 +17,12 @@ The first tutorial walks through analyzing a dataset of 2,700 Peripheral Blood M
 </div>
 <div class="col-sm-4" id = "tutorial">
 	<a href="https://www.dropbox.com/s/y6kwho066vugjrg/pbmc33k.R?dl=1">
-		<img src="{{"/img/pbmc33k-cl.svg" | prepend: site.imgurl }}" alt= "PBMC Tutorial" max-height="250" />
+		<img src="{{"/img/pbmc33k-cl.svg" | prepend: site.imgurl }}" alt= "PBMC 33K Command List" max-height="250" />
 	</a>
 </div>
 <div class="col-sm-4" id = "tutorial">
 	<a href="https://www.dropbox.com/s/n3t13kk4mmo1ggs/pancreas.R?dl=1">
-		<img src="{{"/img/pancreas-cl.svg" | prepend: site.imgurl }}" alt= "PBMC Tutorial" max-height="250" />
+		<img src="{{"/img/pancreas-cl.svg" | prepend: site.imgurl }}" alt= "Pancreas Command List" max-height="250" />
 	</a>
 </div>
 

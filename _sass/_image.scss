@@ -62,3 +62,18 @@
     padding-top: 15px;
     padding-bottom: 20px;
 }
+
+
+.img-fix{
+    image-rendering: pixelated;
+}
+
+.col-xs-6{
+    img{
+        max-height: 210px !important;
+    }
+}
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
