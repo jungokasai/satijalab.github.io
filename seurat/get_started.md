@@ -27,7 +27,7 @@ The first tutorial walks through analyzing a dataset of 2,700 Peripheral Blood M
 </div>
 
 
-Seurat combines dimensionality reduction and graph-based partioniong algorithms for unsupervised clustering of single cells. The approach can be described briefly:
+Seurat combines dimensionality reduction and graph-based partioning algorithms for unsupervised clustering of single cells. The approach can be described briefly:
 
 1. Identification of highly variable genes
 2. Linear dimensionality reduction (PCA) on variable genes
