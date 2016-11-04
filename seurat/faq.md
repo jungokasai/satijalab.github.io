@@ -31,12 +31,15 @@ permalink: /seurat/faq
 	3. Supervised analysis: We suggest that users explore the PCs chosen for downstream analysis. *PCHeatmap()* can display the 'extremes' across both genes and cells, and can be useful to help exclude PCs that may be driven primarily by ribosomal/mitochondrial or cell cycle genes.
 
 * In our latest [tutorial]({{ "pbmc-tutorial.html" | prepend: site.seurat_nav }}), we examine all three options. We strongly encourage users, regardless of their method of choosing PCs,
-to visualize and explore these dimensions in their data, rather than trusting the output of a statistical test or scree plot. 
+to visualize and explore these dimensions in their data, rather than trusting the output of a statistical test or scree plot.
 
 ### 3. How do I select my set of variable genes?
 * *MeanVarPlot()* plots dispersion (a normalized measure of to cell-to-cell variation) as a function of average expression for each gene. Our goal is to identify a set of high-variance genes, and we recommend setting the cutoff parameters in this function by visually evaluating this plot to define outliers. However, particularly when using UMI data, we often obtain similar results including much larger gene sets, including the entire transcriptome.
 
-### 4. Any new features coming soon?
+### 4. How do I further explore specific clusters?
+* In addition to the QC filtering described in the tutorial, the *SubsetData()* function can also be used to generate an object containing only cells in specified clusters. This can be useful if there is a specific cluster or set of clusters that you want to focus your analysis on.
+
+### 5. Any new features coming soon?
 * New methods for data normalization, variable gene selction, and differential expression based on a stastical framework
 for UMI count data.
 * Tutorials for much larger datasets, stay tuned
