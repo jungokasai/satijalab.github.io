@@ -25,7 +25,7 @@ If you have installed a previous version of Seurat, it is recommended that you r
 Install Seurat - directly from [Github](https://github.com/{{ site.github_username }}/seurat).
 
 ```r
-install_url("https://github.com/satijalab/seurat/releases/download/v1.4.0/Seurat_1.4.0.4.tgz", binary = TRUE)
+install_url("https://github.com/satijalab/seurat/releases/download/v1.4.0/Seurat_1.4.0.5.tgz", binary = TRUE)
 library(Seurat)
 ```
 
