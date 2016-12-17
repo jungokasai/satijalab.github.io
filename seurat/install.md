@@ -63,19 +63,13 @@ To fix this, refer to the following [blog post](http://thecoatlessprofessor.com/
    library(devtools)
    ```
 4. Install [Rtools](http://cran.r-project.org/bin/windows/Rtools/)
-5. Install development version of devtools.  There have been some issues with the latest CRAN version of devtools and the latest R release on Windows that cause issues when trying to install all the package dependencies. The latest devtools version on github has addressed this issue
 
-
-   ```R
-   install_github("hadley/devtools")
-   ```
-
-6. Ensure that Java is installed.
+5. Ensure that Java is installed.
 	* Open CommandPrompt and type ```java -version```
 	* If this doesn't return a version of java >= 1.6, download the latest [Java SDK from Oracle](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) and run the installer.
 	* Restart the R session
 
-7. Install Seurat - directly from [Github](https://github.com/{{ site.github_username }}/seurat).
+6. Install Seurat - directly from [Github](https://github.com/{{ site.github_username }}/seurat).
 
    ```r
    install_github("satijalab/seurat")
