@@ -189,7 +189,7 @@ cluster1.markers <- FindMarkers(pbmc, ident.1 = 1, min.pct = 0.25)
 print(head(cluster1.markers, 5))
 # find all markers distinguishing cluster 5 from clusters 0 and 3
 cluster5.markers <- FindMarkers(pbmc, 5, c(0,3), min.pct = 0.25)
-print(head(cluster1.markers, 5))
+print(head(cluster5.markers, 5))
 # find markers for every cluster compared to all remaining cells, report only the positive ones
 pbmc.markers <- FindAllMarkers(pbmc, only.pos = TRUE, min.pct = 0.25, thresh.use = 0.25)
 pbmc.markers %>% group_by(cluster) %>% top_n(2, avg_diff)
