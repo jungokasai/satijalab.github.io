@@ -1,3 +1,24 @@
+- title: "Human dendritic cells (DCs) are derived from distinct circulating precursors that are precommitted to become CD1c+ or CD141+ DCs"
+  link: "http://jem.rupress.org/content/213/13/2861"
+  author: "Breton G, Zheng S, Valieris R, da Silva IT, Satija R, Nussenzweig MC"
+  journal: Journal of Experimental Medicine
+  year: 2016
+  figure: breton_dcs.png
+
+- title: A multi-step transcriptional and chromatin state cascade underlies motor neuron programming from embryonic stem cells
+  link: "http://www.cell.com/cell-stem-cell/abstract/S1934-5909(16)30402-7"
+  author: "Velasco S, Ibrahim MM, Kakumanu A, Garipler G, Aydin, B, Al-Sayegh MA, Hirsekorn A, Abdul-Rahman F, Satija R, Ohler U, Mahony S, Mazzoni EO"
+  journal: Cell Stem Cell
+  year: 2016
+  figure: velasco_reprogramming.png
+
+- title: Single-cell RNA-seq supports a developmental hierarchy in human oligodendroglioma
+  link: "http://www.nature.com/nature/journal/v539/n7628/full/nature20123.html"
+  author: "Tirosh I, Venteicher AS, Hebert C, Escalante LE, Patel AP, Yizhak K, Fisher JM, Rodman C, Mount C, Filbin MG, Neftel C, Desai N, Nyman J, Izar B, Luo CC, Francis JM, Patel AA, Onozato ML, Riggi N, Livak KJ, Gennert D, Satija R, Nahed BV, Curry WT, Martuza RL, Mylvaganam R, lafrate JA, Frosch MP, Golub TR, Rivera MN, Getz G, Rozenblatt-Rosen O, Cahill DP, Monje M, Bernstein BE, Louis DN, Regev A, Suvà ML"
+  journal: Nature Research
+  year: 2016
+  figure: tirosh_dev_hierarchy.png
+
 - title: Landscape of X chromosome inactivation across human tissues
   link: "http://www.biorxiv.org/content/biorxiv/early/2016/09/19/073957.full.pdf"
   author: "Tukiainen T, Villani AC, Yen A, Rivas MA, Marshall JL, Satija R, Aguirre M, Gauthier L, Fleharty M, Kirby A, Cummings BB, Castel SE, Karczewski KJ, Aguet F, Byrnes A, Lappalainen T, Regev A, Ardlie KG, Hacohen N, MacArthur DG, GTEx Consortium"
