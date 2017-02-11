@@ -15,7 +15,7 @@
 - title: Single-cell RNA-seq supports a developmental hierarchy in human oligodendroglioma
   link: "http://www.nature.com/nature/journal/v539/n7628/full/nature20123.html"
   author: "Tirosh I, Venteicher AS, Hebert C, Escalante LE, Patel AP, Yizhak K, Fisher JM, Rodman C, Mount C, Filbin MG, Neftel C, Desai N, Nyman J, Izar B, Luo CC, Francis JM, Patel AA, Onozato ML, Riggi N, Livak KJ, Gennert D, Satija R, Nahed BV, Curry WT, Martuza RL, Mylvaganam R, lafrate JA, Frosch MP, Golub TR, Rivera MN, Getz G, Rozenblatt-Rosen O, Cahill DP, Monje M, Bernstein BE, Louis DN, Regev A, Suvà ML"
-  journal: Nature Research
+  journal: Nature
   year: 2016
   figure: tirosh_dev_hierarchy.png
 
